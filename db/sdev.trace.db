@@ -1,0 +1,2505 @@
+2022-06-10 09:47:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: パラメータ "#1" がセットされていません
+Parameter "#1" is not set; SQL statement:
+
+
+
+SELECT PRODUCT_NAME, MAKER_NAME, IMAGE
+FROM PRODUCT_INFO WHERE MAKER_NAME= ? ; [90012-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:590)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:83)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:182)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:284)
+	at org.h2.command.Command.executeQuery(Command.java:195)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:114)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.doEndTag(QueryTagSupport.java:216)
+	at org.apache.jsp.kadai_jsp._jspx_meth_sql_005fquery_005f0(kadai_jsp.java:342)
+	at org.apache.jsp.kadai_jsp._jspService(kadai_jsp.java:168)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:356)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:867)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1716)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-10 11:49:26 jdbc[5]: null
+org.h2.message.DbException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:245)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:186)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.apache.taglibs.standard.tag.common.sql.DataSourceWrapper.getConnection(DataSourceWrapper.java:83)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.getConnection(QueryTagSupport.java:275)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.doStartTag(QueryTagSupport.java:160)
+	at org.apache.jsp.list2_jsp._jspx_meth_sql_005fquery_005f0(list2_jsp.java:252)
+	at org.apache.jsp.list2_jsp._jspService(list2_jsp.java:150)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:356)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:867)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1716)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 36 more
+2022-06-17 09:21:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "UPDATE PRODUCT_STOCK SET STOCK_NUM -[*]= 1 WHERE PRODUCT_CODE = 1004"; 期待されるステートメント "., ="
+Syntax error in SQL statement "UPDATE PRODUCT_STOCK SET STOCK_NUM -[*]= 1 WHERE PRODUCT_CODE = 1004"; expected "., ="; SQL statement:
+UPDATE PRODUCT_STOCK SET STOCK_NUM -= 1 WHERE PRODUCT_CODE = 1004 [42001-200]
+2022-06-17 10:03:03 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "
+		SELECT * FROM PRODUCT_INFO
+		WHERE MAKER_NAME='Adidos¥' OR MAKER_NAME=¥'Beamer'[*];
+		"
+Syntax error in SQL statement "
+		SELECT * FROM PRODUCT_INFO
+		WHERE MAKER_NAME='Adidos¥' OR MAKER_NAME=¥'Beamer'[*];
+		"; SQL statement:
+
+		SELECT * FROM PRODUCT_INFO
+		WHERE MAKER_NAME='Adidos¥' OR MAKER_NAME=¥'Beamer';
+		 [42000-200]
+2022-06-17 10:03:45 jdbc[35]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "
+		SELECT * FROM PRODUCT_INFO
+		WHERE MAKER_NAME='Beamer¥' OR MAKER_NAME=¥'melon'[*];
+		"
+Syntax error in SQL statement "
+		SELECT * FROM PRODUCT_INFO
+		WHERE MAKER_NAME='Beamer¥' OR MAKER_NAME=¥'melon'[*];
+		"; SQL statement:
+
+		SELECT * FROM PRODUCT_INFO
+		WHERE MAKER_NAME='Beamer¥' OR MAKER_NAME=¥'melon';
+		 [42000-200]
+2022-06-17 10:10:37 jdbc[38]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "PRDUCT_STOCK" が見つかりません
+Table "PRDUCT_STOCK" not found; SQL statement:
+select * from prduct_stock [42102-200]
+2022-06-22 14:29:27 jdbc[5]: null
+org.h2.message.DbException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:245)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:186)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:309)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:289)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1008)
+	at org.h2.server.web.WebApp.process(WebApp.java:223)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:173)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 16 more
+2022-06-22 14:29:30 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(11) AUTO_INCREMENT NOT_NULL[*], NAME VARCHAR(30) NOT_NULL, PASSWORD VARCHAR(30) NOT_NULL, PRIMARY KEY (ID))"; 期待されるステートメント "(, NOT, NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(11) AUTO_INCREMENT NOT_NULL[*], NAME VARCHAR(30) NOT_NULL, PASSWORD VARCHAR(30) NOT_NULL, PRIMARY KEY (ID))"; expected "(, NOT, NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(11) AUTO_INCREMENT NOT_NULL, NAME VARCHAR(30) NOT_NULL, PASSWORD VARCHAR(30) NOT_NULL, PRIMARY KEY (ID)) [42001-200]
+2022-06-22 14:29:46 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(11) AUTO_INCREMENT NOT_NULL[*], NAME VARCHAR(30) NOT_NULL, PASSWORD VARCHAR(30) NOT_NULL, PRIMARY KEY (ID))"; 期待されるステートメント "(, NOT, NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(11) AUTO_INCREMENT NOT_NULL[*], NAME VARCHAR(30) NOT_NULL, PASSWORD VARCHAR(30) NOT_NULL, PRIMARY KEY (ID))"; expected "(, NOT, NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(11) AUTO_INCREMENT NOT_NULL, NAME VARCHAR(30) NOT_NULL, PASSWORD VARCHAR(30) NOT_NULL, PRIMARY KEY (ID)) [42001-200]
+2022-06-22 14:29:48 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(11) AUTO_INCREMENT NOT_NULL[*], NAME VARCHAR(30) NOT_NULL, PASSWORD VARCHAR(30) NOT_NULL, PRIMARY KEY (ID))"; 期待されるステートメント "(, NOT, NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(11) AUTO_INCREMENT NOT_NULL[*], NAME VARCHAR(30) NOT_NULL, PASSWORD VARCHAR(30) NOT_NULL, PRIMARY KEY (ID))"; expected "(, NOT, NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(11) AUTO_INCREMENT NOT_NULL, NAME VARCHAR(30) NOT_NULL, PASSWORD VARCHAR(30) NOT_NULL, PRIMARY KEY (ID)) [42001-200]
+2022-06-23 10:44:47 jdbc[6]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:100)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:187)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:309)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:289)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1008)
+	at org.h2.server.web.WebApp.process(WebApp.java:223)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:173)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+org.h2.message.DbException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:245)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:186)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.apache.taglibs.standard.tag.common.sql.DataSourceWrapper.getConnection(DataSourceWrapper.java:83)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.getConnection(QueryTagSupport.java:275)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.doStartTag(QueryTagSupport.java:160)
+	at org.apache.jsp.list_jsp._jspx_meth_sql_005fquery_005f0(list_jsp.java:263)
+	at org.apache.jsp.list_jsp._jspService(list_jsp.java:153)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:356)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:867)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1716)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 36 more
+2022-06-23 10:44:47 jdbc[6]: null
+org.h2.message.DbException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:245)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:186)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.apache.taglibs.standard.tag.common.sql.DataSourceWrapper.getConnection(DataSourceWrapper.java:83)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.getConnection(QueryTagSupport.java:275)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.doStartTag(QueryTagSupport.java:160)
+	at org.apache.jsp.list_jsp._jspx_meth_sql_005fquery_005f0(list_jsp.java:263)
+	at org.apache.jsp.list_jsp._jspService(list_jsp.java:153)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:356)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:867)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1716)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 36 more
+2022-06-23 13:55:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "あいうえ" が見つかりません
+Column "あいうえ" not found; SQL statement:
+
+INSERT INTO USER_INFO(NAME, PASSWORD)
+  VALUES (あいうえ, aiueo);
+ [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.command.dml.Insert.prepare(Insert.java:327)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:76)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:352)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.doEndTag(QueryTagSupport.java:214)
+	at org.apache.jsp.register_jsp._jspx_meth_sql_005fquery_005f0(register_jsp.java:355)
+	at org.apache.jsp.register_jsp._jspService(register_jsp.java:184)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:356)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:867)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1716)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-23 13:56:54 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: メソッドはクエリしかサポートしていません。executeQueryのかわりに、excecute、またはexecuteUpdateを使用してください
+Method is only allowed for a query. Use execute or executeUpdate instead of executeQuery; SQL statement:
+
+INSERT INTO USER_INFO(NAME, PASSWORD)
+  VALUES (?, ?); [90002-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.Prepared.query(Prepared.java:231)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:285)
+	at org.h2.command.Command.executeQuery(Command.java:195)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:114)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.doEndTag(QueryTagSupport.java:216)
+	at org.apache.jsp.register_jsp._jspx_meth_sql_005fquery_005f0(register_jsp.java:357)
+	at org.apache.jsp.register_jsp._jspService(register_jsp.java:187)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:356)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:867)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1716)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-23 13:58:24 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SHOW COLUMNS USER_INFO[*]:"; 期待されるステートメント "FROM"
+Syntax error in SQL statement "SHOW COLUMNS USER_INFO[*]:"; expected "FROM"; SQL statement:
+SHOW COLUMNS USER_INFO: [42001-200]
+2022-06-23 13:58:48 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SHOW COLUMNS FORM[*] USER_INFO:"; 期待されるステートメント "FROM"
+Syntax error in SQL statement "SHOW COLUMNS FORM[*] USER_INFO:"; expected "FROM"; SQL statement:
+SHOW COLUMNS FORM USER_INFO: [42001-200]
+2022-06-23 13:59:03 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SHOW COLUMNS FROM USER_INFO:[*]"
+Syntax error in SQL statement "SHOW COLUMNS FROM USER_INFO:[*]"; SQL statement:
+SHOW COLUMNS FROM USER_INFO: [42000-200]
+2022-06-23 13:59:04 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SHOW COLUMNS FROM USER_INFO:[*]"
+Syntax error in SQL statement "SHOW COLUMNS FROM USER_INFO:[*]"; SQL statement:
+SHOW COLUMNS FROM USER_INFO: [42000-200]
+2022-06-23 13:59:04 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SHOW COLUMNS FROM USER_INFO:[*]"
+Syntax error in SQL statement "SHOW COLUMNS FROM USER_INFO:[*]"; SQL statement:
+SHOW COLUMNS FROM USER_INFO: [42000-200]
+2022-06-23 13:59:17 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SHOW COLUMNS FROM USER_INFO:[*]"
+Syntax error in SQL statement "SHOW COLUMNS FROM USER_INFO:[*]"; SQL statement:
+show columns FROM USER_INFO: [42000-200]
+2022-06-23 13:59:17 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SHOW COLUMNS FROM USER_INFO:[*]"
+Syntax error in SQL statement "SHOW COLUMNS FROM USER_INFO:[*]"; SQL statement:
+show columns FROM USER_INFO: [42000-200]
+2022-06-23 13:59:17 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SHOW COLUMNS FROM USER_INFO:[*]"
+Syntax error in SQL statement "SHOW COLUMNS FROM USER_INFO:[*]"; SQL statement:
+show columns FROM USER_INFO: [42000-200]
+2022-06-23 13:59:18 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SHOW COLUMNS FROM USER_INFO:[*]"
+Syntax error in SQL statement "SHOW COLUMNS FROM USER_INFO:[*]"; SQL statement:
+show columns FROM USER_INFO: [42000-200]
+2022-06-23 14:01:20 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "COLUMNS" が見つかりません
+Column "COLUMNS" not found; SQL statement:
+ALTER TABLE USER_INFO
+ALTER COLUMNS PASSWORD BIGINT(20) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.getColumn(Table.java:719)
+	at org.h2.command.Parser.columnIfTableExists(Parser.java:8052)
+	at org.h2.command.Parser.parseAlterTableAlter(Parser.java:7712)
+	at org.h2.command.Parser.parseAlterTable(Parser.java:7698)
+	at org.h2.command.Parser.parseAlter(Parser.java:6983)
+	at org.h2.command.Parser.parsePrepared(Parser.java:887)
+	at org.h2.command.Parser.parse(Parser.java:843)
+	at org.h2.command.Parser.parse(Parser.java:815)
+	at org.h2.command.Parser.prepareCommand(Parser.java:738)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-23 14:03:18 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: メソッドはクエリしかサポートしていません。executeQueryのかわりに、excecute、またはexecuteUpdateを使用してください
+Method is only allowed for a query. Use execute or executeUpdate instead of executeQuery; SQL statement:
+
+INSERT INTO USER_INFO(NAME, PASSWORD)
+  VALUES (?, ?); [90002-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.Prepared.query(Prepared.java:231)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:285)
+	at org.h2.command.Command.executeQuery(Command.java:195)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:114)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.doEndTag(QueryTagSupport.java:216)
+	at org.apache.jsp.register_jsp._jspx_meth_sql_005fquery_005f0(register_jsp.java:357)
+	at org.apache.jsp.register_jsp._jspService(register_jsp.java:187)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:356)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:867)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1716)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-23 14:03:22 jdbc[8]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: メソッドはクエリしかサポートしていません。executeQueryのかわりに、excecute、またはexecuteUpdateを使用してください
+Method is only allowed for a query. Use execute or executeUpdate instead of executeQuery; SQL statement:
+
+INSERT INTO USER_INFO(NAME, PASSWORD)
+  VALUES (?, ?); [90002-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.Prepared.query(Prepared.java:231)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:285)
+	at org.h2.command.Command.executeQuery(Command.java:195)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:114)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.doEndTag(QueryTagSupport.java:216)
+	at org.apache.jsp.register_jsp._jspx_meth_sql_005fquery_005f0(register_jsp.java:357)
+	at org.apache.jsp.register_jsp._jspService(register_jsp.java:187)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:356)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:867)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1716)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-23 14:03:29 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: メソッドはクエリしかサポートしていません。executeQueryのかわりに、excecute、またはexecuteUpdateを使用してください
+Method is only allowed for a query. Use execute or executeUpdate instead of executeQuery; SQL statement:
+
+INSERT INTO USER_INFO(NAME, PASSWORD)
+  VALUES (?, ?); [90002-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.Prepared.query(Prepared.java:231)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:285)
+	at org.h2.command.Command.executeQuery(Command.java:195)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:114)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.doEndTag(QueryTagSupport.java:216)
+	at org.apache.jsp.register_jsp._jspx_meth_sql_005fquery_005f0(register_jsp.java:357)
+	at org.apache.jsp.register_jsp._jspService(register_jsp.java:187)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:356)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:867)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1716)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-23 14:03:56 jdbc[10]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:100)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:187)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:309)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:289)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1008)
+	at org.h2.server.web.WebApp.process(WebApp.java:223)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:173)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+org.h2.message.DbException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:245)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:186)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.apache.taglibs.standard.tag.common.sql.DataSourceWrapper.getConnection(DataSourceWrapper.java:83)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.getConnection(QueryTagSupport.java:275)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.doStartTag(QueryTagSupport.java:160)
+	at org.apache.jsp.register_jsp._jspx_meth_sql_005fquery_005f0(register_jsp.java:332)
+	at org.apache.jsp.register_jsp._jspService(register_jsp.java:187)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:356)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:867)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1716)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 36 more
+2022-06-23 14:03:56 jdbc[10]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: メソッドはクエリしかサポートしていません。executeQueryのかわりに、excecute、またはexecuteUpdateを使用してください
+Method is only allowed for a query. Use execute or executeUpdate instead of executeQuery; SQL statement:
+
+INSERT INTO USER_INFO(NAME, PASSWORD) VALUES (?, ?); [90002-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.Prepared.query(Prepared.java:231)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:285)
+	at org.h2.command.Command.executeQuery(Command.java:195)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:114)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.doEndTag(QueryTagSupport.java:216)
+	at org.apache.jsp.register_jsp._jspx_meth_sql_005fquery_005f0(register_jsp.java:356)
+	at org.apache.jsp.register_jsp._jspService(register_jsp.java:187)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:356)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:867)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1716)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-23 14:04:39 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: メソッドはクエリしかサポートしていません。executeQueryのかわりに、excecute、またはexecuteUpdateを使用してください
+Method is only allowed for a query. Use execute or executeUpdate instead of executeQuery; SQL statement:
+
+INSERT INTO USER_INFO (NAME, PASSWORD) VALUES (?, ?); [90002-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.Prepared.query(Prepared.java:231)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:285)
+	at org.h2.command.Command.executeQuery(Command.java:195)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:114)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.doEndTag(QueryTagSupport.java:216)
+	at org.apache.jsp.register_jsp._jspx_meth_sql_005fquery_005f0(register_jsp.java:358)
+	at org.apache.jsp.register_jsp._jspService(register_jsp.java:162)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:356)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:867)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1716)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-23 14:20:39 jdbc[22]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:100)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:187)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:309)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:289)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1008)
+	at org.h2.server.web.WebApp.process(WebApp.java:223)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:173)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+org.h2.message.DbException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:245)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:186)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.apache.taglibs.standard.tag.common.sql.DataSourceWrapper.getConnection(DataSourceWrapper.java:83)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.getConnection(QueryTagSupport.java:275)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.doStartTag(QueryTagSupport.java:160)
+	at org.apache.jsp.login_jsp._jspx_meth_sql_005fquery_005f0(login_jsp.java:325)
+	at org.apache.jsp.login_jsp._jspService(login_jsp.java:163)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:356)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:867)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1716)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 36 more
+2022-06-23 14:20:39 jdbc[22]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:100)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:187)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:309)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:289)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1008)
+	at org.h2.server.web.WebApp.process(WebApp.java:223)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:173)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+org.h2.message.DbException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:245)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:186)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.apache.taglibs.standard.tag.common.sql.DataSourceWrapper.getConnection(DataSourceWrapper.java:83)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.getConnection(QueryTagSupport.java:275)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.doStartTag(QueryTagSupport.java:160)
+	at org.apache.jsp.login_jsp._jspx_meth_sql_005fquery_005f0(login_jsp.java:325)
+	at org.apache.jsp.login_jsp._jspService(login_jsp.java:163)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:356)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:867)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1716)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 36 more
+2022-06-23 14:54:32 jdbc[42]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "USER_ID" が見つかりません
+Table "USER_ID" not found; SQL statement:
+select * from user_id [42102-200]
+2022-06-23 16:29:15 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE USER_INFO ALTER ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT"
+Syntax error in SQL statement "ALTER TABLE USER_INFO ALTER ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT"; SQL statement:
+ALTER TABLE USER_INFO ALTER ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT [42000-200]
+2022-06-23 16:29:34 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "COLUMNS" が見つかりません
+Column "COLUMNS" not found; SQL statement:
+ALTER TABLE USER_INFO ALTER COLUMNS ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.getColumn(Table.java:719)
+	at org.h2.command.Parser.columnIfTableExists(Parser.java:8052)
+	at org.h2.command.Parser.parseAlterTableAlter(Parser.java:7712)
+	at org.h2.command.Parser.parseAlterTable(Parser.java:7698)
+	at org.h2.command.Parser.parseAlter(Parser.java:6983)
+	at org.h2.command.Parser.parsePrepared(Parser.java:887)
+	at org.h2.command.Parser.parse(Parser.java:843)
+	at org.h2.command.Parser.parse(Parser.java:815)
+	at org.h2.command.Parser.prepareCommand(Parser.java:738)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-23 16:32:57 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME NVARCHAR(32), PASSWORD VARCHAR(64)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME NVARCHAR(32), PASSWORD VARCHAR(64)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, NAME NVARCHAR(32), PASSWORD VARCHAR(64) [42001-200]
+2022-06-23 16:35:34 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64) [42001-200]
+2022-06-23 16:35:34 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64) [42001-200]
+2022-06-23 16:35:35 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64) [42001-200]
+2022-06-23 16:35:35 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64) [42001-200]
+2022-06-23 16:35:35 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64) [42001-200]
+2022-06-23 16:35:35 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64) [42001-200]
+2022-06-23 16:35:35 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64) [42001-200]
+2022-06-23 16:35:36 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64) [42001-200]
+2022-06-23 16:35:36 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64) [42001-200]
+2022-06-23 16:35:48 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64) [42001-200]
+2022-06-23 16:35:48 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64) [42001-200]
+2022-06-23 16:35:49 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64) [42001-200]
+2022-06-23 16:36:37 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64))"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64))"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, NAME VARCHAR(32), PASSWORD VARCHAR(64)) [42001-200]
+2022-06-23 16:41:03 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID))"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID))"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID)) [42001-200]
+2022-06-23 16:41:05 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID))"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID))"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID)) [42001-200]
+2022-06-23 16:41:06 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID))"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID))"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID)) [42001-200]
+2022-06-23 16:41:06 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID))"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID))"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID)) [42001-200]
+2022-06-23 16:41:06 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID))"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID))"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID)) [42001-200]
+2022-06-23 16:41:06 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID))"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID))"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID)) [42001-200]
+2022-06-23 16:41:07 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID))"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID))"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID)) [42001-200]
+2022-06-23 16:41:07 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID))"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID))"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID)) [42001-200]
+2022-06-23 16:41:28 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(11) AUTO_INCREMENT NOT NULL, NAME VARCHAR(30) NOT NULL, PASSWORD VARCHAR(30) NOT USER_INFO[*] NULL, PRIMARY KEY (ID))"; 期待されるステートメント "NULL"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(11) AUTO_INCREMENT NOT NULL, NAME VARCHAR(30) NOT NULL, PASSWORD VARCHAR(30) NOT USER_INFO[*] NULL, PRIMARY KEY (ID))"; expected "NULL"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(11) AUTO_INCREMENT NOT NULL, NAME VARCHAR(30) NOT NULL, PASSWORD VARCHAR(30) NOT USER_INFO NULL, PRIMARY KEY (ID)) [42001-200]
+2022-06-23 16:41:41 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(11) AUTO_INCREMENT NOT NULL, NAME VARCHAR(30) NOT NULL, PASSWORD VARCHAR(30) NOT USER_INFO[*] NULL, PRIMARY KEY (ID))"; 期待されるステートメント "NULL"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(11) AUTO_INCREMENT NOT NULL, NAME VARCHAR(30) NOT NULL, PASSWORD VARCHAR(30) NOT USER_INFO[*] NULL, PRIMARY KEY (ID))"; expected "NULL"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(11) AUTO_INCREMENT NOT NULL, NAME VARCHAR(30) NOT NULL, PASSWORD VARCHAR(30) NOT USER_INFO NULL, PRIMARY KEY (ID)) [42001-200]
+2022-06-23 16:41:42 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(11) AUTO_INCREMENT NOT NULL, NAME VARCHAR(30) NOT NULL, PASSWORD VARCHAR(30) NOT USER_INFO[*] NULL, PRIMARY KEY (ID))"; 期待されるステートメント "NULL"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(11) AUTO_INCREMENT NOT NULL, NAME VARCHAR(30) NOT NULL, PASSWORD VARCHAR(30) NOT USER_INFO[*] NULL, PRIMARY KEY (ID))"; expected "NULL"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(11) AUTO_INCREMENT NOT NULL, NAME VARCHAR(30) NOT NULL, PASSWORD VARCHAR(30) NOT USER_INFO NULL, PRIMARY KEY (ID)) [42001-200]
+2022-06-23 16:42:57 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(5) NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO[*] NULL, PRIMARY KEY (ID))"; 期待されるステートメント "NULL"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(5) NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO[*] NULL, PRIMARY KEY (ID))"; expected "NULL"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(5) NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID)) [42001-200]
+2022-06-23 16:43:10 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(5) UNSIGNRED[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID))"; 期待されるステートメント "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(5) UNSIGNRED[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID))"; expected "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(5) UNSIGNRED NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID)) [42001-200]
+2022-06-23 16:43:10 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(5) UNSIGNRED[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID))"; 期待されるステートメント "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(5) UNSIGNRED[*] NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID))"; expected "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(5) UNSIGNRED NOT NULL AUTO_INCREMENT, NAME VARCHAR(32) NOT NULL, PASSWORD VARCHAR(64) NOT USER_INFO NULL, PRIMARY KEY (ID)) [42001-200]
+2022-06-23 16:43:19 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(ID INT(11) AUTO_INCREMENT NOT NULL, NAME VARCHAR(30) NOT NULL, PASSWORD VARCHAR(30) NOT USER_INFO[*] NULL, PRIMARY KEY (ID))"; 期待されるステートメント "NULL"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(ID INT(11) AUTO_INCREMENT NOT NULL, NAME VARCHAR(30) NOT NULL, PASSWORD VARCHAR(30) NOT USER_INFO[*] NULL, PRIMARY KEY (ID))"; expected "NULL"; SQL statement:
+CREATE TABLE USER_INFO(ID INT(11) AUTO_INCREMENT NOT NULL, NAME VARCHAR(30) NOT NULL, PASSWORD VARCHAR(30) NOT USER_INFO NULL, PRIMARY KEY (ID)) [42001-200]
+2022-06-23 16:43:23 jdbc[52]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO (ID INT(11) AUTO_INCREMENT NOT NULL, NAME VARCHAR(30) NOT NULL, PASSWORD VARCHAR(30) NOT USER_INFO[*] NULL, PRIMARY KEY (ID))"; 期待されるステートメント "NULL"
+Syntax error in SQL statement "CREATE TABLE USER_INFO (ID INT(11) AUTO_INCREMENT NOT NULL, NAME VARCHAR(30) NOT NULL, PASSWORD VARCHAR(30) NOT USER_INFO[*] NULL, PRIMARY KEY (ID))"; expected "NULL"; SQL statement:
+CREATE TABLE USER_INFO (ID INT(11) AUTO_INCREMENT NOT NULL, NAME VARCHAR(30) NOT NULL, PASSWORD VARCHAR(30) NOT USER_INFO NULL, PRIMARY KEY (ID)) [42001-200]
+2022-06-23 18:01:31 jdbc[53]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:100)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:187)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:309)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:289)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1008)
+	at org.h2.server.web.WebApp.process(WebApp.java:223)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:173)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+org.h2.message.DbException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:245)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:186)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.apache.taglibs.standard.tag.common.sql.DataSourceWrapper.getConnection(DataSourceWrapper.java:83)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.getConnection(QueryTagSupport.java:275)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.doStartTag(QueryTagSupport.java:160)
+	at org.apache.jsp.login_jsp._jspx_meth_sql_005fquery_005f0(login_jsp.java:343)
+	at org.apache.jsp.login_jsp._jspService(login_jsp.java:172)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:356)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:867)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1716)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 36 more
+2022-06-23 18:01:31 jdbc[53]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "USER_INFO" が見つかりません
+Table "USER_INFO" not found; SQL statement:
+
+SELECT PASSWORD
+  FROM USER_INFO
+  WHERE ID=?;
+
+ [42102-200]
+2022-06-23 18:20:38 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO (
+ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT PRYMARY KEY, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO (
+ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT PRYMARY KEY, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO (
+ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT PRYMARY KEY, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL) [42001-200]
+2022-06-23 18:21:01 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO (
+ID INT(5) NOT NULL AUTO_INCREMENT PRYMARY[*] KEY, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL)"; 期待されるステートメント "(, NOT, NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO (
+ID INT(5) NOT NULL AUTO_INCREMENT PRYMARY[*] KEY, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL)"; expected "(, NOT, NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO (
+ID INT(5) NOT NULL AUTO_INCREMENT PRYMARY KEY, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL) [42001-200]
+2022-06-23 18:21:12 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO (
+ID INT(5) NOT NULL AUTO_INCREMENT PRYMARY[*] KEY, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL)"; 期待されるステートメント "(, NOT, NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO (
+ID INT(5) NOT NULL AUTO_INCREMENT PRYMARY[*] KEY, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL)"; expected "(, NOT, NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO (
+ID INT(5) NOT NULL AUTO_INCREMENT PRYMARY KEY, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL) [42001-200]
+2022-06-23 18:21:12 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO (
+ID INT(5) NOT NULL AUTO_INCREMENT PRYMARY[*] KEY, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL)"; 期待されるステートメント "(, NOT, NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO (
+ID INT(5) NOT NULL AUTO_INCREMENT PRYMARY[*] KEY, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL)"; expected "(, NOT, NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO (
+ID INT(5) NOT NULL AUTO_INCREMENT PRYMARY KEY, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL) [42001-200]
+2022-06-23 18:21:29 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+ID INT(5) NOT NULL AUTO_INCREMENT PRYMARY[*] KEY, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL)"; 期待されるステートメント "(, NOT, NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+ID INT(5) NOT NULL AUTO_INCREMENT PRYMARY[*] KEY, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL)"; expected "(, NOT, NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+ID INT(5) NOT NULL AUTO_INCREMENT PRYMARY KEY, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL) [42001-200]
+2022-06-23 18:21:30 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+ID INT(5) NOT NULL AUTO_INCREMENT PRYMARY[*] KEY, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL)"; 期待されるステートメント "(, NOT, NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+ID INT(5) NOT NULL AUTO_INCREMENT PRYMARY[*] KEY, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL)"; expected "(, NOT, NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+ID INT(5) NOT NULL AUTO_INCREMENT PRYMARY KEY, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL) [42001-200]
+2022-06-23 18:22:25 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+ID BIGINT(5) NOT NULL AUTO_INCREMENT PRYMARY[*] KEY, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL)"; 期待されるステートメント "(, NOT, NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+ID BIGINT(5) NOT NULL AUTO_INCREMENT PRYMARY[*] KEY, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL)"; expected "(, NOT, NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+ID BIGINT(5) NOT NULL AUTO_INCREMENT PRYMARY KEY, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL) [42001-200]
+2022-06-23 18:22:26 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+ID BIGINT(5) NOT NULL AUTO_INCREMENT PRYMARY[*] KEY, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL)"; 期待されるステートメント "(, NOT, NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+ID BIGINT(5) NOT NULL AUTO_INCREMENT PRYMARY[*] KEY, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL)"; expected "(, NOT, NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+ID BIGINT(5) NOT NULL AUTO_INCREMENT PRYMARY KEY, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL) [42001-200]
+2022-06-23 18:22:26 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+ID BIGINT(5) NOT NULL AUTO_INCREMENT PRYMARY[*] KEY, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL)"; 期待されるステートメント "(, NOT, NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+ID BIGINT(5) NOT NULL AUTO_INCREMENT PRYMARY[*] KEY, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL)"; expected "(, NOT, NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+ID BIGINT(5) NOT NULL AUTO_INCREMENT PRYMARY KEY, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL) [42001-200]
+2022-06-23 18:23:16 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: 不明なデータ型: "KEY"
+Unknown data type: "KEY"; SQL statement:
+CREATE TABLE USER_INFO(
+ID BIGINT(5) NOT NULL AUTO_INCREMENT, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL,
+PRYMARY KEY(ID)) [50004-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:5971)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:5697)
+	at org.h2.command.Parser.parseTableColumnDefinition(Parser.java:8442)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:8379)
+	at org.h2.command.Parser.parseCreate(Parser.java:6276)
+	at org.h2.command.Parser.parsePrepared(Parser.java:903)
+	at org.h2.command.Parser.parse(Parser.java:843)
+	at org.h2.command.Parser.parse(Parser.java:815)
+	at org.h2.command.Parser.prepareCommand(Parser.java:738)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-23 18:23:17 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: 不明なデータ型: "KEY"
+Unknown data type: "KEY"; SQL statement:
+CREATE TABLE USER_INFO(
+ID BIGINT(5) NOT NULL AUTO_INCREMENT, 
+NAME VARCHAR(32) NOT NULL, 
+PASSWORD VARCHAR(30) NOT NULL,
+PRYMARY KEY(ID)) [50004-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:5971)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:5697)
+	at org.h2.command.Parser.parseTableColumnDefinition(Parser.java:8442)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:8379)
+	at org.h2.command.Parser.parseCreate(Parser.java:6276)
+	at org.h2.command.Parser.parsePrepared(Parser.java:903)
+	at org.h2.command.Parser.parse(Parser.java:843)
+	at org.h2.command.Parser.parse(Parser.java:815)
+	at org.h2.command.Parser.prepareCommand(Parser.java:738)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-23 18:23:52 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: 不明なデータ型: "KEY"
+Unknown data type: "KEY"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID BIGINT(5) NOT NULL AUTO_INCREMENT, 
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+  PRYMARY KEY(ID)
+) [50004-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:5971)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:5697)
+	at org.h2.command.Parser.parseTableColumnDefinition(Parser.java:8442)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:8379)
+	at org.h2.command.Parser.parseCreate(Parser.java:6276)
+	at org.h2.command.Parser.parsePrepared(Parser.java:903)
+	at org.h2.command.Parser.parse(Parser.java:843)
+	at org.h2.command.Parser.parse(Parser.java:815)
+	at org.h2.command.Parser.prepareCommand(Parser.java:738)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-23 18:23:53 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: 不明なデータ型: "KEY"
+Unknown data type: "KEY"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID BIGINT(5) NOT NULL AUTO_INCREMENT, 
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+  PRYMARY KEY(ID)
+) [50004-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:5971)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:5697)
+	at org.h2.command.Parser.parseTableColumnDefinition(Parser.java:8442)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:8379)
+	at org.h2.command.Parser.parseCreate(Parser.java:6276)
+	at org.h2.command.Parser.parsePrepared(Parser.java:903)
+	at org.h2.command.Parser.parse(Parser.java:843)
+	at org.h2.command.Parser.parse(Parser.java:815)
+	at org.h2.command.Parser.prepareCommand(Parser.java:738)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-23 18:23:53 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: 不明なデータ型: "KEY"
+Unknown data type: "KEY"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID BIGINT(5) NOT NULL AUTO_INCREMENT, 
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+  PRYMARY KEY(ID)
+) [50004-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:5971)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:5697)
+	at org.h2.command.Parser.parseTableColumnDefinition(Parser.java:8442)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:8379)
+	at org.h2.command.Parser.parseCreate(Parser.java:6276)
+	at org.h2.command.Parser.parsePrepared(Parser.java:903)
+	at org.h2.command.Parser.parse(Parser.java:843)
+	at org.h2.command.Parser.parse(Parser.java:815)
+	at org.h2.command.Parser.prepareCommand(Parser.java:738)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-23 18:23:53 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: 不明なデータ型: "KEY"
+Unknown data type: "KEY"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID BIGINT(5) NOT NULL AUTO_INCREMENT, 
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+  PRYMARY KEY(ID)
+) [50004-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:5971)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:5697)
+	at org.h2.command.Parser.parseTableColumnDefinition(Parser.java:8442)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:8379)
+	at org.h2.command.Parser.parseCreate(Parser.java:6276)
+	at org.h2.command.Parser.parsePrepared(Parser.java:903)
+	at org.h2.command.Parser.parse(Parser.java:843)
+	at org.h2.command.Parser.parse(Parser.java:815)
+	at org.h2.command.Parser.prepareCommand(Parser.java:738)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-23 18:23:53 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: 不明なデータ型: "KEY"
+Unknown data type: "KEY"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID BIGINT(5) NOT NULL AUTO_INCREMENT, 
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+  PRYMARY KEY(ID)
+) [50004-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:5971)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:5697)
+	at org.h2.command.Parser.parseTableColumnDefinition(Parser.java:8442)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:8379)
+	at org.h2.command.Parser.parseCreate(Parser.java:6276)
+	at org.h2.command.Parser.parsePrepared(Parser.java:903)
+	at org.h2.command.Parser.parse(Parser.java:843)
+	at org.h2.command.Parser.parse(Parser.java:815)
+	at org.h2.command.Parser.prepareCommand(Parser.java:738)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-23 18:23:54 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: 不明なデータ型: "KEY"
+Unknown data type: "KEY"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID BIGINT(5) NOT NULL AUTO_INCREMENT, 
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+  PRYMARY KEY(ID)
+) [50004-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:5971)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:5697)
+	at org.h2.command.Parser.parseTableColumnDefinition(Parser.java:8442)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:8379)
+	at org.h2.command.Parser.parseCreate(Parser.java:6276)
+	at org.h2.command.Parser.parsePrepared(Parser.java:903)
+	at org.h2.command.Parser.parse(Parser.java:843)
+	at org.h2.command.Parser.parse(Parser.java:815)
+	at org.h2.command.Parser.prepareCommand(Parser.java:738)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-23 18:24:01 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: 不明なデータ型: "KEY"
+Unknown data type: "KEY"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID BIGINT(5) NOT NULL AUTO_INCREMENT, 
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+  PRYMARY KEY (ID)
+) [50004-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:5971)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:5697)
+	at org.h2.command.Parser.parseTableColumnDefinition(Parser.java:8442)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:8379)
+	at org.h2.command.Parser.parseCreate(Parser.java:6276)
+	at org.h2.command.Parser.parsePrepared(Parser.java:903)
+	at org.h2.command.Parser.parse(Parser.java:843)
+	at org.h2.command.Parser.parse(Parser.java:815)
+	at org.h2.command.Parser.prepareCommand(Parser.java:738)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-23 18:24:02 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: 不明なデータ型: "KEY"
+Unknown data type: "KEY"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID BIGINT(5) NOT NULL AUTO_INCREMENT, 
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+  PRYMARY KEY (ID)
+) [50004-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:5971)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:5697)
+	at org.h2.command.Parser.parseTableColumnDefinition(Parser.java:8442)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:8379)
+	at org.h2.command.Parser.parseCreate(Parser.java:6276)
+	at org.h2.command.Parser.parsePrepared(Parser.java:903)
+	at org.h2.command.Parser.parse(Parser.java:843)
+	at org.h2.command.Parser.parse(Parser.java:815)
+	at org.h2.command.Parser.prepareCommand(Parser.java:738)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-23 18:24:02 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: 不明なデータ型: "KEY"
+Unknown data type: "KEY"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID BIGINT(5) NOT NULL AUTO_INCREMENT, 
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+  PRYMARY KEY (ID)
+) [50004-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:5971)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:5697)
+	at org.h2.command.Parser.parseTableColumnDefinition(Parser.java:8442)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:8379)
+	at org.h2.command.Parser.parseCreate(Parser.java:6276)
+	at org.h2.command.Parser.parsePrepared(Parser.java:903)
+	at org.h2.command.Parser.parse(Parser.java:843)
+	at org.h2.command.Parser.parse(Parser.java:815)
+	at org.h2.command.Parser.prepareCommand(Parser.java:738)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-23 18:24:02 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: 不明なデータ型: "KEY"
+Unknown data type: "KEY"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID BIGINT(5) NOT NULL AUTO_INCREMENT, 
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+  PRYMARY KEY (ID)
+) [50004-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:5971)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:5697)
+	at org.h2.command.Parser.parseTableColumnDefinition(Parser.java:8442)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:8379)
+	at org.h2.command.Parser.parseCreate(Parser.java:6276)
+	at org.h2.command.Parser.parsePrepared(Parser.java:903)
+	at org.h2.command.Parser.parse(Parser.java:843)
+	at org.h2.command.Parser.parse(Parser.java:815)
+	at org.h2.command.Parser.prepareCommand(Parser.java:738)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-23 18:26:13 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID BIGINT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, 
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID BIGINT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT, 
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID BIGINT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, 
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:27:26 jdbc[55]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:100)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:187)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:309)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:289)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1008)
+	at org.h2.server.web.WebApp.process(WebApp.java:223)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:173)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+org.h2.message.DbException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:245)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:186)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:309)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:289)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1008)
+	at org.h2.server.web.WebApp.process(WebApp.java:223)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:173)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 16 more
+2022-06-23 18:27:43 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID BIGINT(5) ZEROFILL[*] NOT NULL AUTO_INCREMENT, 
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID BIGINT(5) ZEROFILL[*] NOT NULL AUTO_INCREMENT, 
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID BIGINT(5) ZEROFILL NOT NULL AUTO_INCREMENT, 
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:27:54 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID BIGINT(5) ZEROFILL[*]  NOT NULL AUTO_INCREMENT, 
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID BIGINT(5) ZEROFILL[*]  NOT NULL AUTO_INCREMENT, 
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID BIGINT(5) ZEROFILL  NOT NULL AUTO_INCREMENT, 
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:27:55 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID BIGINT(5) ZEROFILL[*]  NOT NULL AUTO_INCREMENT, 
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID BIGINT(5) ZEROFILL[*]  NOT NULL AUTO_INCREMENT, 
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID BIGINT(5) ZEROFILL  NOT NULL AUTO_INCREMENT, 
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:27:59 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID BIGINT(5) ZEROFILL[*] NOT NULL AUTO_INCREMENT, 
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID BIGINT(5) ZEROFILL[*] NOT NULL AUTO_INCREMENT, 
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID BIGINT(5) ZEROFILL NOT NULL AUTO_INCREMENT, 
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:28:00 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID BIGINT(5) ZEROFILL[*] NOT NULL AUTO_INCREMENT, 
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID BIGINT(5) ZEROFILL[*] NOT NULL AUTO_INCREMENT, 
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID BIGINT(5) ZEROFILL NOT NULL AUTO_INCREMENT, 
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:28:44 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID INT(3) ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID INT(3) ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID int(3) ZEROFILL NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:28:45 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID INT(3) ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID INT(3) ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID int(3) ZEROFILL NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:28:45 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID INT(3) ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID INT(3) ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID int(3) ZEROFILL NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:28:45 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID INT(3) ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID INT(3) ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID int(3) ZEROFILL NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:28:45 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID INT(3) ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID INT(3) ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID int(3) ZEROFILL NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:28:46 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID INT(3) ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID INT(3) ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID int(3) ZEROFILL NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:29:15 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID INT(3) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID INT(3) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID INT(3) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:29:16 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID INT(3) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID INT(3) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID INT(3) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:29:16 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID INT(3) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID INT(3) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID INT(3) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:29:17 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID INT(3) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID INT(3) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID INT(3) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:29:17 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID INT(3) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID INT(3) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID INT(3) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:29:17 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID INT(3) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID INT(3) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID INT(3) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:29:27 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:29:28 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:29:39 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:29:40 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:29:40 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:29:41 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:29:41 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL[*] NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:29:47 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL[*] AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL[*] AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:29:48 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL[*] AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL[*] AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:29:48 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL[*] AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL[*] AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:29:48 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL[*] AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL[*] AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(30) NOT NULL,
+   PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:30:32 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL[*] AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(32) NOT NULL,
+  PRIMARY KEY (ID)
+)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL[*] AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(32) NOT NULL,
+  PRIMARY KEY (ID)
+)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID INT(5) UNSIGNED ZEROFILL AUTO_INCREMENT,
+  NAME VARCHAR(32) NOT NULL, 
+  PASSWORD VARCHAR(32) NOT NULL,
+  PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:31:57 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID INT (5) UNSIGNED ZEROFILL[*] NOT NULL  AUTO_INCREMENT,
+  NAME VARCHAR (32) NOT NULL, 
+  PASSWORD VARCHAR (32) NOT NULL,
+  PRIMARY KEY (ID)
+)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID INT (5) UNSIGNED ZEROFILL[*] NOT NULL  AUTO_INCREMENT,
+  NAME VARCHAR (32) NOT NULL, 
+  PASSWORD VARCHAR (32) NOT NULL,
+  PRIMARY KEY (ID)
+)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID INT (5) UNSIGNED ZEROFILL NOT NULL  AUTO_INCREMENT,
+  NAME VARCHAR (32) NOT NULL, 
+  PASSWORD VARCHAR (32) NOT NULL,
+  PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:31:58 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID INT (5) UNSIGNED ZEROFILL[*] NOT NULL  AUTO_INCREMENT,
+  NAME VARCHAR (32) NOT NULL, 
+  PASSWORD VARCHAR (32) NOT NULL,
+  PRIMARY KEY (ID)
+)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID INT (5) UNSIGNED ZEROFILL[*] NOT NULL  AUTO_INCREMENT,
+  NAME VARCHAR (32) NOT NULL, 
+  PASSWORD VARCHAR (32) NOT NULL,
+  PRIMARY KEY (ID)
+)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID INT (5) UNSIGNED ZEROFILL NOT NULL  AUTO_INCREMENT,
+  NAME VARCHAR (32) NOT NULL, 
+  PASSWORD VARCHAR (32) NOT NULL,
+  PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:31:58 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID INT (5) UNSIGNED ZEROFILL[*] NOT NULL  AUTO_INCREMENT,
+  NAME VARCHAR (32) NOT NULL, 
+  PASSWORD VARCHAR (32) NOT NULL,
+  PRIMARY KEY (ID)
+)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID INT (5) UNSIGNED ZEROFILL[*] NOT NULL  AUTO_INCREMENT,
+  NAME VARCHAR (32) NOT NULL, 
+  PASSWORD VARCHAR (32) NOT NULL,
+  PRIMARY KEY (ID)
+)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID INT (5) UNSIGNED ZEROFILL NOT NULL  AUTO_INCREMENT,
+  NAME VARCHAR (32) NOT NULL, 
+  PASSWORD VARCHAR (32) NOT NULL,
+  PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 18:31:58 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE USER_INFO(
+  ID INT (5) UNSIGNED ZEROFILL[*] NOT NULL  AUTO_INCREMENT,
+  NAME VARCHAR (32) NOT NULL, 
+  PASSWORD VARCHAR (32) NOT NULL,
+  PRIMARY KEY (ID)
+)"; 期待されるステートメント "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE USER_INFO(
+  ID INT (5) UNSIGNED ZEROFILL[*] NOT NULL  AUTO_INCREMENT,
+  NAME VARCHAR (32) NOT NULL, 
+  PASSWORD VARCHAR (32) NOT NULL,
+  PRIMARY KEY (ID)
+)"; expected "INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE USER_INFO(
+  ID INT (5) UNSIGNED ZEROFILL NOT NULL  AUTO_INCREMENT,
+  NAME VARCHAR (32) NOT NULL, 
+  PASSWORD VARCHAR (32) NOT NULL,
+  PRIMARY KEY (ID)
+) [42001-200]
+2022-06-23 19:02:08 jdbc[71]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:100)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:187)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:309)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:289)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1008)
+	at org.h2.server.web.WebApp.process(WebApp.java:223)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:173)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+org.h2.message.DbException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:245)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:186)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.apache.taglibs.standard.tag.common.sql.DataSourceWrapper.getConnection(DataSourceWrapper.java:83)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.getConnection(QueryTagSupport.java:275)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.doStartTag(QueryTagSupport.java:160)
+	at org.apache.jsp.list2_jsp._jspx_meth_sql_005fquery_005f0(list2_jsp.java:254)
+	at org.apache.jsp.list2_jsp._jspService(list2_jsp.java:150)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:356)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:867)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1716)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 36 more
+2022-07-01 10:57:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: データ変換中にエラーが発生しました "; select * from user"
+Data conversion error converting "; select * from user"; SQL statement:
+
+    SELECT PASSWORD
+    FROM USER_INFO
+    WHERE ID=?; [22018-200]
+2022-07-01 10:57:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: データ変換中にエラーが発生しました "; select * from user_info;"
+Data conversion error converting "; select * from user_info;"; SQL statement:
+
+    SELECT PASSWORD
+    FROM USER_INFO
+    WHERE ID=?; [22018-200]
+2022-07-01 10:58:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: データ変換中にエラーが発生しました "-1 = -1"
+Data conversion error converting "-1 = -1"; SQL statement:
+
+    SELECT PASSWORD
+    FROM USER_INFO
+    WHERE ID=?; [22018-200]
+2022-07-06 23:17:40 jdbc[21]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: 不明なデータ型: "VARDHAR"
+Unknown data type: "VARDHAR"; SQL statement:
+CREATE TABLE USER_INFO_META (ID INTEGER(10) AUTO_INCREMENT NOT NULL, NAME VARCHAR(64), PASSWORD VARCHAR(32) NOT NULL, PHONE_NUMBER VARCHAR(32), ADDRESS VARDHAR(255), PRIMARY KEY (ID)) [50004-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:5971)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:5697)
+	at org.h2.command.Parser.parseTableColumnDefinition(Parser.java:8442)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:8379)
+	at org.h2.command.Parser.parseCreate(Parser.java:6276)
+	at org.h2.command.Parser.parsePrepared(Parser.java:903)
+	at org.h2.command.Parser.parse(Parser.java:843)
+	at org.h2.command.Parser.parse(Parser.java:815)
+	at org.h2.command.Parser.prepareCommand(Parser.java:738)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-06 23:42:44 jdbc[22]: null
+org.h2.message.DbException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:245)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:186)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.apache.taglibs.standard.tag.common.sql.DataSourceWrapper.getConnection(DataSourceWrapper.java:83)
+	at org.apache.taglibs.standard.tag.common.sql.UpdateTagSupport.getConnection(UpdateTagSupport.java:233)
+	at org.apache.taglibs.standard.tag.common.sql.UpdateTagSupport.doStartTag(UpdateTagSupport.java:116)
+	at org.apache.jsp.register_jsp._jspx_meth_sql_005fupdate_005f0(register_jsp.java:345)
+	at org.apache.jsp.register_jsp._jspService(register_jsp.java:169)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:356)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:867)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1716)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 36 more
+2022-07-06 23:43:21 jdbc[21]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SELECT * FROM USER_INFO USER_INFO_META USER_INFO[*]"
+Syntax error in SQL statement "SELECT * FROM USER_INFO USER_INFO_META USER_INFO[*]"; SQL statement:
+SELECT * FROM USER_INFO USER_INFO_META USER_INFO [42000-200]
+2022-07-07 00:19:42 jdbc[80]: exception
+org.h2.jdbc.JdbcSQLDataException: データ変換中にエラーが発生しました 
+Data conversion error converting ; SQL statement:
+
+    SELECT ID, NAME, PASSWORD
+    FROM USER_INFO_META
+    WHERE ID=?; [22018-200]
+2022-07-14 14:36:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "PRODUCT_STOCK[*]"; 期待されるステートメント "PREPARE"
+Syntax error in SQL statement "PRODUCT_STOCK[*]"; expected "PREPARE"; SQL statement:
+PRODUCT_STOCK [42001-200]
+2022-07-14 22:00:41 jdbc[182]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SHOW USER_INFO[*]"
+Syntax error in SQL statement "SHOW USER_INFO[*]"; SQL statement:
+SHOW USER_INFO [42000-200]
+2022-07-14 22:00:45 jdbc[182]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SHOW TABLE[*] USER_INFO"
+Syntax error in SQL statement "SHOW TABLE[*] USER_INFO"; SQL statement:
+SHOW TABLE USER_INFO [42000-200]
+2022-07-14 22:00:48 jdbc[182]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SHOW TABLE[*] USER_INFO"
+Syntax error in SQL statement "SHOW TABLE[*] USER_INFO"; SQL statement:
+SHOW TABLE USER_INFO [42000-200]
+2022-07-14 22:01:16 jdbc[182]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SHOW TABLES USER_INFO[*]"
+Syntax error in SQL statement "SHOW TABLES USER_INFO[*]"; SQL statement:
+SHOW TABLES USER_INFO [42000-200]
+2022-07-14 22:01:49 jdbc[182]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SHOW COLUMN[*] FROM USER_INFO"
+Syntax error in SQL statement "SHOW COLUMN[*] FROM USER_INFO"; SQL statement:
+SHOW COLUMN FROM USER_INFO [42000-200]
+2022-07-14 22:56:19 jdbc[183]: null
+org.h2.message.DbException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:245)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:186)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.apache.taglibs.standard.tag.common.sql.DataSourceWrapper.getConnection(DataSourceWrapper.java:83)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.getConnection(QueryTagSupport.java:275)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.doStartTag(QueryTagSupport.java:160)
+	at org.apache.jsp.list2_jsp._jspx_meth_sql_005fquery_005f0(list2_jsp.java:260)
+	at org.apache.jsp.list2_jsp._jspService(list2_jsp.java:150)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:356)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:867)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1716)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 36 more
+2022-07-14 23:15:31 jdbc[3]: null
+org.h2.message.DbException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:245)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:186)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.apache.taglibs.standard.tag.common.sql.DataSourceWrapper.getConnection(DataSourceWrapper.java:83)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.getConnection(QueryTagSupport.java:275)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.doStartTag(QueryTagSupport.java:160)
+	at org.apache.jsp.list2_jsp._jspx_meth_sql_005fquery_005f1(list2_jsp.java:498)
+	at org.apache.jsp.list2_jsp._jspx_meth_c_005fotherwise_005f0(list2_jsp.java:463)
+	at org.apache.jsp.list2_jsp._jspx_meth_c_005fchoose_005f0(list2_jsp.java:339)
+	at org.apache.jsp.list2_jsp._jspService(list2_jsp.java:211)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:356)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:867)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1716)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 38 more

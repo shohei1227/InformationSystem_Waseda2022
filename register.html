@@ -1,0 +1,33 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>新規登録</title>
+</head>
+
+<body>
+<center>
+  <h2>新規登録</h2>
+  <br>
+  <form action="register.jsp" method="POST">
+    <h3>NAME</h3>
+    <input type="text" id="name" name="userName">
+    <br>
+    <h3>Password</h3>
+    <input type="text" id="pass" name="userPass">
+    <br>
+    <br>
+  
+    <input type="submit" value="確定" name="submit">
+  </form>
+</center>
+
+
+<!-- httpで開いているかチェック -->
+<script>
+  if (location.href.match(/^file:/)) {
+    alert("Webサーバを起動して、http://localhost:8080 から開いてください");
+  }
+</script>
+
+</body>
+</html>
