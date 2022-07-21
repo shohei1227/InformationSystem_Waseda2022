@@ -2513,3 +2513,1284 @@ org.h2.jdbc.JdbcSQLDataException: データ変換中にエラーが発生しま�
 Data conversion error converting ; SQL statement:
 
   UPDATE PRODUCT_STOCK SET STOCK_NUM = STOCK_NUM -1 WHERE PRODUCT_CODE = ?; [22018-200]
+2022-07-21 22:19:53 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SHOW COLUMNS PRODUCT_INFO[*]"; 期待されるステートメント "FROM"
+Syntax error in SQL statement "SHOW COLUMNS PRODUCT_INFO[*]"; expected "FROM"; SQL statement:
+SHOW COLUMNS PRODUCT_INFO [42001-200]
+2022-07-21 22:24:44 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE PRODUCT(
+PRODUCT_CODE BIGINT(19) NOT NULL 
+PRODUCT_NAME[*] VARCHAR(255),
+CATEGORY_NAME VARCHAR(255),
+COLOR VARCHAR(255),
+MAKER_NAME VARCHAR(255), 
+DETAIL VARCHAR(4096),
+MATERIAL VARCHAR(255),
+SIZE VARCHAR(255),
+IMAGE VARCHAR(255),
+PRICE BIGINT(19),
+PRIMARY KEY (PRODUCT_CODE)
+)"; 期待されるステートメント "AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE PRODUCT(
+PRODUCT_CODE BIGINT(19) NOT NULL 
+PRODUCT_NAME[*] VARCHAR(255),
+CATEGORY_NAME VARCHAR(255),
+COLOR VARCHAR(255),
+MAKER_NAME VARCHAR(255), 
+DETAIL VARCHAR(4096),
+MATERIAL VARCHAR(255),
+SIZE VARCHAR(255),
+IMAGE VARCHAR(255),
+PRICE BIGINT(19),
+PRIMARY KEY (PRODUCT_CODE)
+)"; expected "AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE PRODUCT(
+PRODUCT_CODE BIGINT(19) NOT NULL 
+PRODUCT_NAME VARCHAR(255),
+CATEGORY_NAME VARCHAR(255),
+COLOR VARCHAR(255),
+MAKER_NAME VARCHAR(255), 
+DETAIL VARCHAR(4096),
+MATERIAL VARCHAR(255),
+SIZE VARCHAR(255),
+IMAGE VARCHAR(255),
+PRICE BIGINT(19),
+PRIMARY KEY (PRODUCT_CODE)
+) [42001-200]
+2022-07-21 22:28:58 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 関数 "ADIDOSのTシャツ" が見つかりません
+Function "ADIDOSのTシャツ" not found; SQL statement:
+INSERT INTO PRODUCT (
+    PRODUCT_CODE,PRODUCT_NAME,CATEGORY_NAME,color,MAKER_NAME,DETAIL,MATERIAL,SIZE,IMAGE,PRICE
+    ) VALUES (
+    1001,Tシャツ,Tシャツ,白,Adidos,AdidosのTシャツ (白),綿、ポリエステル,L,1001.jpeg,2000
+    ) [90022-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.command.Parser.readJavaFunction(Parser.java:3565)
+	at org.h2.command.Parser.readFunction(Parser.java:3770)
+	at org.h2.command.Parser.readTerm(Parser.java:4305)
+	at org.h2.command.Parser.readFactor(Parser.java:3343)
+	at org.h2.command.Parser.readSum(Parser.java:3330)
+	at org.h2.command.Parser.readConcat(Parser.java:3305)
+	at org.h2.command.Parser.readCondition(Parser.java:3108)
+	at org.h2.command.Parser.readExpression(Parser.java:3059)
+	at org.h2.command.Parser.parseValuesForCommand(Parser.java:1877)
+	at org.h2.command.Parser.parseInsertGivenTable(Parser.java:1817)
+	at org.h2.command.Parser.parseInsert(Parser.java:1749)
+	at org.h2.command.Parser.parsePrepared(Parser.java:954)
+	at org.h2.command.Parser.parse(Parser.java:843)
+	at org.h2.command.Parser.parse(Parser.java:815)
+	at org.h2.command.Parser.prepareCommand(Parser.java:738)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-21 22:29:11 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO PRODUCT (
+    PRODUCT_CODE,PRODUCT_NAME,CATEGORY_NAME,COLOR,MAKER_NAME,DETAIL,MATERIAL,SIZE,IMAGE,PRICE
+    ) VALUES (
+    1001,Tシャツ,Tシャツ,白,'Adidos,AdidosのTシャツ (白)',綿[*]、ポリエステル,L,1001.JPEG,2000
+    )"
+Syntax error in SQL statement "INSERT INTO PRODUCT (
+    PRODUCT_CODE,PRODUCT_NAME,CATEGORY_NAME,COLOR,MAKER_NAME,DETAIL,MATERIAL,SIZE,IMAGE,PRICE
+    ) VALUES (
+    1001,Tシャツ,Tシャツ,白,'Adidos,AdidosのTシャツ (白)',綿[*]、ポリエステル,L,1001.JPEG,2000
+    )"; SQL statement:
+INSERT INTO PRODUCT (
+    PRODUCT_CODE,PRODUCT_NAME,CATEGORY_NAME,color,MAKER_NAME,DETAIL,MATERIAL,SIZE,IMAGE,PRICE
+    ) VALUES (
+    1001,Tシャツ,Tシャツ,白,'Adidos,AdidosのTシャツ (白)',綿、ポリエステル,L,1001.jpeg,2000
+    ) [42000-200]
+2022-07-21 22:29:22 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO PRODUCT (
+    PRODUCT_CODE,PRODUCT_NAME,CATEGORY_NAME,COLOR,MAKER_NAME,DETAIL,MATERIAL,SIZE,IMAGE,PRICE
+    ) VALUES (
+    1001,Tシャツ,Tシャツ,白,ADIDOS,'AdidosのTシャツ (白)',綿[*]、ポリエステル,L,1001.JPEG,2000
+    )"
+Syntax error in SQL statement "INSERT INTO PRODUCT (
+    PRODUCT_CODE,PRODUCT_NAME,CATEGORY_NAME,COLOR,MAKER_NAME,DETAIL,MATERIAL,SIZE,IMAGE,PRICE
+    ) VALUES (
+    1001,Tシャツ,Tシャツ,白,ADIDOS,'AdidosのTシャツ (白)',綿[*]、ポリエステル,L,1001.JPEG,2000
+    )"; SQL statement:
+INSERT INTO PRODUCT (
+    PRODUCT_CODE,PRODUCT_NAME,CATEGORY_NAME,color,MAKER_NAME,DETAIL,MATERIAL,SIZE,IMAGE,PRICE
+    ) VALUES (
+    1001,Tシャツ,Tシャツ,白,Adidos,'AdidosのTシャツ (白)',綿、ポリエステル,L,1001.jpeg,2000
+    ) [42000-200]
+2022-07-21 22:30:03 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "Tシャツ" が見つかりません
+Column "Tシャツ" not found; SQL statement:
+INSERT INTO PRODUCT (
+    PRODUCT_CODE,PRODUCT_NAME,CATEGORY_NAME,color,MAKER_NAME,DETAIL,MATERIAL,SIZE,IMAGE,PRICE
+    ) VALUES (
+    1001,"Tシャツ","Tシャツ","白","Adidos","AdidosのTシャツ (白)","綿、ポリエステル","L","1001.jpeg",2000
+    ) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.command.dml.Insert.prepare(Insert.java:327)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-21 22:30:28 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "Tシャツ" が見つかりません
+Column "Tシャツ" not found; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE,PRODUCT_NAME,CATEGORY_NAME,color,MAKER_NAME,DETAIL,MATERIAL,SIZE,IMAGE,PRICE) VALUES (1001,"Tシャツ","Tシャツ","白","Adidos","AdidosのTシャツ (白)","綿、ポリエステル","L","1001.jpeg",2000) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.command.dml.Insert.prepare(Insert.java:327)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-21 22:32:21 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "Tシャツ" が見つかりません
+Column "Tシャツ" not found; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE,PRODUCT_NAME,CATEGORY_NAME,COLOR,MAKER_NAME,DETAIL,MATERIAL,SIZE,IMAGE,PRICE) VALUES (1001,"Tシャツ","Tシャツ","白","Adidos","AdidosのTシャツ (白)","綿、ポリエステル","L","1001.jpeg",2000) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.command.dml.Insert.prepare(Insert.java:327)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-21 22:32:36 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "Tシャツ" が見つかりません
+Column "Tシャツ" not found; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE,PRODUCT_NAME,CATEGORY_NAME,COLOR,MAKER_NAME,DETAIL,MATERIAL,SIZE,IMAGE,PRICE) VALUES (1001,"Tシャツ","Tシャツ","白","Adidos","AdidosのTシャツ (白)","綿、ポリエステル","L","1001.jpeg",2000) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.command.dml.Insert.prepare(Insert.java:327)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-21 22:32:36 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "Tシャツ" が見つかりません
+Column "Tシャツ" not found; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE,PRODUCT_NAME,CATEGORY_NAME,COLOR,MAKER_NAME,DETAIL,MATERIAL,SIZE,IMAGE,PRICE) VALUES (1001,"Tシャツ","Tシャツ","白","Adidos","AdidosのTシャツ (白)","綿、ポリエステル","L","1001.jpeg",2000) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.command.dml.Insert.prepare(Insert.java:327)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-21 22:32:37 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "Tシャツ" が見つかりません
+Column "Tシャツ" not found; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE,PRODUCT_NAME,CATEGORY_NAME,COLOR,MAKER_NAME,DETAIL,MATERIAL,SIZE,IMAGE,PRICE) VALUES (1001,"Tシャツ","Tシャツ","白","Adidos","AdidosのTシャツ (白)","綿、ポリエステル","L","1001.jpeg",2000) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.command.dml.Insert.prepare(Insert.java:327)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-21 22:32:54 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "Tシャツ" が見つかりません
+Column "Tシャツ" not found; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE,PRODUCT_NAME,CATEGORY_NAME,COLOR,MAKER_NAME,DETAIL,MATERIAL,SIZE,IMAGE,PRICE) 
+VALUES (1001,"Tシャツ","Tシャツ","白","Adidos","AdidosのTシャツ (白)","綿、ポリエステル","L","1001.jpeg",2000) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.command.dml.Insert.prepare(Insert.java:327)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-21 22:32:54 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "Tシャツ" が見つかりません
+Column "Tシャツ" not found; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE,PRODUCT_NAME,CATEGORY_NAME,COLOR,MAKER_NAME,DETAIL,MATERIAL,SIZE,IMAGE,PRICE) 
+VALUES (1001,"Tシャツ","Tシャツ","白","Adidos","AdidosのTシャツ (白)","綿、ポリエステル","L","1001.jpeg",2000) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.command.dml.Insert.prepare(Insert.java:327)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-21 22:32:55 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "Tシャツ" が見つかりません
+Column "Tシャツ" not found; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE,PRODUCT_NAME,CATEGORY_NAME,COLOR,MAKER_NAME,DETAIL,MATERIAL,SIZE,IMAGE,PRICE) 
+VALUES (1001,"Tシャツ","Tシャツ","白","Adidos","AdidosのTシャツ (白)","綿、ポリエステル","L","1001.jpeg",2000) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.command.dml.Insert.prepare(Insert.java:327)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-21 22:32:55 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "Tシャツ" が見つかりません
+Column "Tシャツ" not found; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE,PRODUCT_NAME,CATEGORY_NAME,COLOR,MAKER_NAME,DETAIL,MATERIAL,SIZE,IMAGE,PRICE) 
+VALUES (1001,"Tシャツ","Tシャツ","白","Adidos","AdidosのTシャツ (白)","綿、ポリエステル","L","1001.jpeg",2000) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.command.dml.Insert.prepare(Insert.java:327)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-21 22:33:17 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "Tシャツ" が見つかりません
+Column "Tシャツ" not found; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE,PRODUCT_NAME,CATEGORY_NAME,COLOR,MAKER_NAME,DETAIL,MATERIAL,SIZE,IMAGE,PRICE) 
+VALUES (1001,"Tシャツ","Tシャツ","白","Adidos","AdidosのTシャツ (白)","綿、ポリエステル","L","1001.jpeg",2000) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.command.dml.Insert.prepare(Insert.java:327)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-21 22:33:18 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "Tシャツ" が見つかりません
+Column "Tシャツ" not found; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE,PRODUCT_NAME,CATEGORY_NAME,COLOR,MAKER_NAME,DETAIL,MATERIAL,SIZE,IMAGE,PRICE) 
+VALUES (1001,"Tシャツ","Tシャツ","白","Adidos","AdidosのTシャツ (白)","綿、ポリエステル","L","1001.jpeg",2000) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.command.dml.Insert.prepare(Insert.java:327)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-21 22:34:03 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "Tシャツ" が見つかりません
+Column "Tシャツ" not found; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1001, "Tシャツ", "Tシャツ", "白", "Adidos", "AdidosのTシャツ (白)", "綿、ポリエステル" ,"L" ,"1001.jpeg" ,2000) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.command.dml.Insert.prepare(Insert.java:327)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-21 22:34:04 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "Tシャツ" が見つかりません
+Column "Tシャツ" not found; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1001, "Tシャツ", "Tシャツ", "白", "Adidos", "AdidosのTシャツ (白)", "綿、ポリエステル" ,"L" ,"1001.jpeg" ,2000) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.command.dml.Insert.prepare(Insert.java:327)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-21 22:35:38 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "Tシャツ" が見つかりません
+Column "Tシャツ" not found; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1001, "Tシャツ", "Tシャツ", "白", "Adidos", "AdidosのTシャツ (白)", "綿、ポリエステル" ,"L" ,"1001.jpeg" ,2000) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.command.dml.Insert.prepare(Insert.java:327)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-21 22:36:00 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "白" が見つかりません
+Column "白" not found; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1001, 'Tシャツ', 'Tシャツ', "白", "Adidos", "AdidosのTシャツ (白)", "綿、ポリエステル" ,"L" ,"1001.jpeg" ,2000) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.command.dml.Insert.prepare(Insert.java:327)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-21 22:36:01 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "白" が見つかりません
+Column "白" not found; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1001, 'Tシャツ', 'Tシャツ', "白", "Adidos", "AdidosのTシャツ (白)", "綿、ポリエステル" ,"L" ,"1001.jpeg" ,2000) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.command.dml.Insert.prepare(Insert.java:327)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-21 22:36:02 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "白" が見つかりません
+Column "白" not found; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1001, 'Tシャツ', 'Tシャツ', "白", "Adidos", "AdidosのTシャツ (白)", "綿、ポリエステル" ,"L" ,"1001.jpeg" ,2000) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.command.dml.Insert.prepare(Insert.java:327)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-21 22:36:02 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "白" が見つかりません
+Column "白" not found; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1001, 'Tシャツ', 'Tシャツ', "白", "Adidos", "AdidosのTシャツ (白)", "綿、ポリエステル" ,"L" ,"1001.jpeg" ,2000) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.command.dml.Insert.prepare(Insert.java:327)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-21 22:36:40 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1001, 'Tシャツ', 'Tシャツ', '白', 'Adidos"", 'AdidosのTシャツ (白)', '綿、ポリエステル' ,'L' ,'1001.jpeg[*]', 2000);"
+Syntax error in SQL statement "INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1001, 'Tシャツ', 'Tシャツ', '白', 'Adidos"", 'AdidosのTシャツ (白)', '綿、ポリエステル' ,'L' ,'1001.jpeg[*]', 2000);"; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1001, 'Tシャツ', 'Tシャツ', '白', 'Adidos", 'AdidosのTシャツ (白)', '綿、ポリエステル' ,'L' ,'1001.jpeg', 2000); [42000-200]
+2022-07-21 22:44:27 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1002, 'Tシャツ', 'Tシャツ', '緑', 'Adidos', 'AdidosのTシャツ (緑)', '綿、ポリエステル', 'M', '1002.jpeg', 2000), (1003, 'Tシャツ', 'Tシャツ', '緑', 'Adidos', 'AdidosのTシャツ (緑)', '綿、ポリエステル', 'S', '1002.jpeg', 2000), (1004, 'Tシャツ', 'Tシャツ', '黒', 'Adidos', 'AdidosのTシャツ (黒)', '綿、ポリエステル', 'L', '1003.jpeg', 2000), (1005, 'Tシャツ', 'Tシャツ', '白', 'Adidos', 'AdidosのTシャツ (白)', '綿、ポリエステル', 'M', '1004.jpeg', 2000), (1006, 'Tシャツ', 'Tシャツ', '白', 'Adidos', 'AdidosのTシャツ (白)', '綿、ポリエステル', 'S', '1004.jpeg', 2000), (1007, 'Tシャツ', 'Tシャツ', 'グレー', 'Adidos', 'AdidosのTシャツ (グレー)', '綿、ポリエステル', 'L', '1005.jpeg', 2000), (1008, 'Tシャツ', 'Tシャツ', '黒', 'Adidos', 'AdidosのTシャツ (黒)', '綿、ポリエステル', 'L', '1006.jpeg', 2000), (1009, 'Tシャツ', 'Tシャツ', '黒', 'Adidos', 'AdidosのTシャツ (黒)', '綿、ポリエステル', 'M', '1006.jpeg', 2000), (1010, 'Tシャツ', 'Tシャツ', '黒', 'NOVEMBRE', 'NOVEMBREのTシャツ (黒)', '綿、ポリエステル', 'M', '1007.jpeg', 2000), (1011, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'L', '1008.jpeg', 2000), (1012, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'M', '1008.jpeg', 2000), (1013, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'L', '1009.jpeg', 2000), (1014, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'S', '1009.jpeg', 2000), (1015, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'M', '1010.jpeg', 2000), (1016, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'S', '1010.jpeg', 2000), (1017, 'Tシャツ', 'Tシャツ', '黒', 'NOVEMBRE', 'NOVEMBREのTシャツ (黒)', '綿、ポリエステル', 'L', '1011.jpeg', 2000), (1018, 'Tシャツ', 'Tシャツ', '黒', 'NOVEMBRE', 'NOVEMBREのTシャツ (黒)', '綿、ポリエステル', 'M', '1011.jpeg', 2000), (1019, 'Tシャツ', 'Tシャツ', '青', 'NOVEMBRE', 'NOVEMBREのTシャツ (青)', '綿、ポリエステル', 'L', '1012.jpeg', 2000), (1020, 'Tシャツ', 'Tシャツ', '青', 'NOVEMBRE', 'NOVEMBREのTシャツ (青)', '綿、ポリエステル', 'M', '1012.jpeg', 2000), (1021, 'Tシャツ', 'Tシャツ', '白', 'Beamer', 'BeamerのTシャツ (白)', '綿、ポリエステル', 'M', '1013.jpeg', 2000), (1022, 'Tシャツ', 'Tシャツ', '黒', 'Beamer', 'BeamerのTシャツ (黒)', '綿、ポリエステル', 'L', '1014.jpeg', 2000), (1023, 'Tシャツ', 'Tシャツ', '白', 'Beamer', 'BeamerのTシャツ (白)', '綿、ポリエステル', 'L', '1015.jpeg', 2000), (1024, 'Tシャツ', 'Tシャツ', '黒', 'Beamer', 'BeamerのTシャツ (黒)', '綿、ポリエステル', 'L', '1016.jpeg', 2000), (1025, 'Tシャツ', 'Tシャツ', '赤', 'Beamer', 'BeamerのTシャツ (赤)', '綿、ポリエステル', 'M', '1017.jpeg', 2000), (1026, 'Tシャツ', 'Tシャツ', '黒', 'Beamer', 'BeamerのTシャツ (黒)', '綿、ポリエステル', 'L', '1018.jpeg', 2000), (1027, 'Tシャツ', 'Tシャツ', '白', 'Pume', 'PumeのTシャツ (白)', '綿、ポリエステル', 'L', '1019.jpeg', 2000), (1028, 'Tシャツ', 'Tシャツ', '白', 'Pume', 'PumeのTシャツ (白)', '綿、ポリエステル', 'M', '1019.jpeg', 2000), (1029, 'Tシャツ', 'Tシャツ', 'グレー', 'Pume', 'PumeのTシャツ (グレー)', '綿、ポリエステル', 'L', '1020.jpeg', 2000), (1030, 'Tシャツ', 'Tシャツ', 'グレー', 'Pume', 'PumeのTシャツ (グレー)', '綿、ポリエステル', 'M', '1020.jpeg', 2000), (1031, 'Tシャツ', 'Tシャツ', '白', 'Cerina', 'CerinaのTシャツ (白)', '綿、ポリエステル', 'M', '1021.jpeg', 2000), (1032, 'Tシャツ', 'Tシャツ', '白', 'Cerina', 'CerinaのTシャツ (白)', '綿、ポリエステル', 'L', '1022.jpeg', 2000), (1033, 'Tシャツ', 'Tシャツ', '白', 'Cerina', 'CerinaのTシャツ (白)', '綿、ポリエステル', 'L', '1023.jpeg', 2000), (1034, 'シャツ', 'シャツ', '赤', 'Adidos', 'Adidosのシャツ (赤)', '綿・ポリエステル', 'L', '1024.jpeg', 2500), (1035, 'シャツ', 'シャツ', '赤', 'Adidos', 'Adidosのシャツ (赤)', '綿・ポリエステル', 'M', '1024.jpeg', 2500), (1036, 'シャツ', 'シャツ', '青', 'Adidos', 'Adidosのシャツ (青)', '綿・ポリエステル', 'L', '1025.jpeg', 2500), (1037, 'シャツ', 'シャツ', '青', 'Adidos', 'Adidosのシャツ (青)', '綿・ポリエステル', 'M', '1025.jpeg', 2500), (1038, 'シャツ', 'シャツ', '白', 'Adidos', 'Adidosのシャツ (白)', '綿・ポリエステル', 'L', '1026.jpeg', 2500), (1039, 'シャツ', 'シャツ', '白', 'Adidos', 'Adidosのシャツ (白)', '綿・ポリエステル', 'M', '1026.jpeg', 2500), (1040, 'シャツ', 'シャツ', '白', 'Beamer', 'Beamerのシャツ (白)', '綿・ポリエステル', 'M', '1027.jpeg', 2500), (1041, 'シャツ', 'シャツ', '青', 'Beamer', 'Beamerのシャツ (青)', '綿・ポリエステル', 'M', '1028.jpeg', 2500), (1042, 'シャツ', 'シャツ', '青', 'Beamer', 'Beamerのシャツ (青)', '綿・ポリエステル', 'L', '1029.jpeg', 2500), (1043, 'シャツ', 'シャツ', '黒', 'Beamer', 'Beamerのシャツ (黒)', '綿・ポリエステル', 'L', '1030.jpeg', 2500), (1044, 'シャツ', 'シャツ', '黒', 'melon', 'melonのシャツ (黒)', '綿・ポリエステル', 'M', '1031.jpeg', 2500), (1045, 'シャツ', 'シャツ', '黒', 'melon', 'melonのシャツ (黒)', '綿・ポリエステル', 'L', '1032.jpeg', 2500), (1046, 'シャツ', 'シャツ', '白', 'melon', 'melonのシャツ (白)', '綿・ポリエステル', 'L', '1033.jpeg', 2500), (1047, 'シャツ', 'シャツ', '白', 'Neki', 'Nekiのシャツ (白)', '綿・ポリエステル', 'M', '1034.jpeg', '2500), (1048, 'シャツ[*]', 'シャツ', 'グレー', 'NEKI', 'NEKIのシャツ (グレー)', '綿・ポリエステル', 'M', '1035.JPEG', 2500), (1049, 'タンクトップ', 'タンクトップ', 'グレー', 'GUP', 'GUPのタンクトップ (グレー)', 'コットン', 'L', '1036.JPEG', 1200), (1050, 'タンクトップ', 'タンクトップ', '白', 'GUP', 'GUPのタンクトップ (白)', 'コットン', 'L', '1037.JPEG', 1200), (1051, 'タンクトップ', 'タンクトップ', '黒', 'GUP', 'GUPのタンクトップ (黒)', 'コットン', 'M', '1038.JPEG', 1200), (1052, 'タンクトップ', 'タンクトップ', '白', 'GUP', 'GUPのタンクトップ (白)', 'コットン', 'M', '1039.JPEG', 1200), (1053, 'ベルト', 'ベルト', '黒', 'CERINA', 'CERINAのベルト (黒)', 'レザー', 'FREE', '1040.JPEG', 999), (1054, 'ベルト', 'ベルト', '茶色', 'CERINA', 'CERINAのベルト (茶色)', 'レザー', 'FREE', '1041.JPEG', 999), (1055, 'ベルト', 'ベルト', '茶色', 'CERINA', 'CERINAのベルト (茶色)', 'レザー', 'FREE', '1042.JPEG', 999), (1056, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1043.JPEG', 1290), (1057, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1043.JPEG', 1290), (1058, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1043.JPEG', 1290), (1059, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1044.JPEG', 1290), (1060, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1044.JPEG', 1290), (1061, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1044.JPEG', 1290), (1062, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1045.JPEG', 1290), (1063, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1045.JPEG', 1290), (1064, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1045.JPEG', 1290), (1065, 'スラックス', 'スラックス', '緑', 'NEKI', 'NEKIのスラックス (緑)', '綿、アクリル', 'L', '1046.JPEG', 1600), (1066, 'スラックス', 'スラックス', '緑', 'NEKI', 'NEKIのスラックス (緑)', '綿、アクリル', 'M', '1046.JPEG', 1600), (1067, 'スラックス', 'スラックス', '黄色', 'NEKI', 'NEKIのスラックス (黄色)', '綿、アクリル', 'L', '1047.JPEG', 1600), (1068, 'スラックス', 'スラックス', '緑', 'NEKI', 'NEKIのスラックス (緑)', '綿、アクリル', 'M', '1048.JPEG', 1600), (1069, 'スラックス', 'スラックス', 'ピンク', 'NEKI', 'NEKIのスラックス (ピンク)', '綿、アクリル', 'L', '1049.JPEG', 1600), (1070, 'スラックス', 'スラックス', '黒', 'ADIDOS', 'ADIDOSのスラックス (黒)', '綿、アクリル', 'L', '1050.JPEG', 1600), (1071, 'スラックス', 'スラックス', '白', 'ADIDOS', 'ADIDOSのスラックス (ピンク)', '綿、アクリル', 'M', '1051.JPEG', 1600), (1072, 'スラックス', 'スラックス', '白', 'ADIDOS', 'ADIDOSのスラックス (黒)', '綿、アクリル', 'S', '1051.JPEG', 1600), (1073, 'スラックス', 'スラックス', '黒', 'ADIDOS', 'ADIDOSのスラックス (白)', '綿、アクリル', 'L', '1052.JPEG', 1600), (1074, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'L', '1053.JPEG', 2500), (1075, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1053.JPEG', 2500), (1076, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'L', '1054.JPEG', 2500), (1077, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1054.JPEG', 2500), (1078, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1055.JPEG', 2500), (1079, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'S', '1055.JPEG', 2500), (1080, '短パン', '短パン', '黒', 'NEKI', 'NEKIの短パン (黒)', '綿、ポリエステル', 'FREE', '1056.JPEG', 1000), (1081, '短パン', '短パン', '緑', 'BEAMER', 'BEAMERの短パン (緑)', '綿、ポリエステル', 'FREE', '1057.JPEG', 1000), (1082, '短パン', '短パン', '黒', 'BEAMER', 'BEAMERの短パン (黒)', '綿、ポリエステル', 'FREE', '1058.JPEG', 1000), (1083, '短パン', '短パン', '青', 'CERINA', 'CERINAの短パン (青)', '綿、ポリエステル', 'FREE', '1059.JPEG', 1000), (1084, '短パン', '短パン', 'ピンク', 'CERINA', 'CERINAの短パン (ピンク)', '綿、ポリエステル', 'FREE', '1060.JPEG', 1500), (1085, '帽子', '帽子', '黒', 'SOP', 'SOPの帽子 (黒)', 'ナイロン', 'FREE', '1061.JPEG', 1500), (1086, '帽子', '帽子', '黒', 'SOP', 'SOPの帽子 (黒)', 'コットン', 'FREE', '1062.JPEG', 1500), (1087, '帽子', '帽子', '茶色', 'UNDER', 'UNDERの帽子 (茶色)', 'コットン', 'FREE', '1063.JPEG', 1500), (1088, '帽子', '帽子', '青', 'UNDER', 'UNDERの帽子 (青)', 'ポリエステル', 'FREE', '1064.JPEG', 1500), (1089, '帽子', '帽子', '青', 'LIV', 'LIVの帽子 (青)', 'コットン', 'FREE', '1065.JPEG, 1500)"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1002, 'Tシャツ', 'Tシャツ', '緑', 'Adidos', 'AdidosのTシャツ (緑)', '綿、ポリエステル', 'M', '1002.jpeg', 2000), (1003, 'Tシャツ', 'Tシャツ', '緑', 'Adidos', 'AdidosのTシャツ (緑)', '綿、ポリエステル', 'S', '1002.jpeg', 2000), (1004, 'Tシャツ', 'Tシャツ', '黒', 'Adidos', 'AdidosのTシャツ (黒)', '綿、ポリエステル', 'L', '1003.jpeg', 2000), (1005, 'Tシャツ', 'Tシャツ', '白', 'Adidos', 'AdidosのTシャツ (白)', '綿、ポリエステル', 'M', '1004.jpeg', 2000), (1006, 'Tシャツ', 'Tシャツ', '白', 'Adidos', 'AdidosのTシャツ (白)', '綿、ポリエステル', 'S', '1004.jpeg', 2000), (1007, 'Tシャツ', 'Tシャツ', 'グレー', 'Adidos', 'AdidosのTシャツ (グレー)', '綿、ポリエステル', 'L', '1005.jpeg', 2000), (1008, 'Tシャツ', 'Tシャツ', '黒', 'Adidos', 'AdidosのTシャツ (黒)', '綿、ポリエステル', 'L', '1006.jpeg', 2000), (1009, 'Tシャツ', 'Tシャツ', '黒', 'Adidos', 'AdidosのTシャツ (黒)', '綿、ポリエステル', 'M', '1006.jpeg', 2000), (1010, 'Tシャツ', 'Tシャツ', '黒', 'NOVEMBRE', 'NOVEMBREのTシャツ (黒)', '綿、ポリエステル', 'M', '1007.jpeg', 2000), (1011, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'L', '1008.jpeg', 2000), (1012, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'M', '1008.jpeg', 2000), (1013, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'L', '1009.jpeg', 2000), (1014, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'S', '1009.jpeg', 2000), (1015, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'M', '1010.jpeg', 2000), (1016, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'S', '1010.jpeg', 2000), (1017, 'Tシャツ', 'Tシャツ', '黒', 'NOVEMBRE', 'NOVEMBREのTシャツ (黒)', '綿、ポリエステル', 'L', '1011.jpeg', 2000), (1018, 'Tシャツ', 'Tシャツ', '黒', 'NOVEMBRE', 'NOVEMBREのTシャツ (黒)', '綿、ポリエステル', 'M', '1011.jpeg', 2000), (1019, 'Tシャツ', 'Tシャツ', '青', 'NOVEMBRE', 'NOVEMBREのTシャツ (青)', '綿、ポリエステル', 'L', '1012.jpeg', 2000), (1020, 'Tシャツ', 'Tシャツ', '青', 'NOVEMBRE', 'NOVEMBREのTシャツ (青)', '綿、ポリエステル', 'M', '1012.jpeg', 2000), (1021, 'Tシャツ', 'Tシャツ', '白', 'Beamer', 'BeamerのTシャツ (白)', '綿、ポリエステル', 'M', '1013.jpeg', 2000), (1022, 'Tシャツ', 'Tシャツ', '黒', 'Beamer', 'BeamerのTシャツ (黒)', '綿、ポリエステル', 'L', '1014.jpeg', 2000), (1023, 'Tシャツ', 'Tシャツ', '白', 'Beamer', 'BeamerのTシャツ (白)', '綿、ポリエステル', 'L', '1015.jpeg', 2000), (1024, 'Tシャツ', 'Tシャツ', '黒', 'Beamer', 'BeamerのTシャツ (黒)', '綿、ポリエステル', 'L', '1016.jpeg', 2000), (1025, 'Tシャツ', 'Tシャツ', '赤', 'Beamer', 'BeamerのTシャツ (赤)', '綿、ポリエステル', 'M', '1017.jpeg', 2000), (1026, 'Tシャツ', 'Tシャツ', '黒', 'Beamer', 'BeamerのTシャツ (黒)', '綿、ポリエステル', 'L', '1018.jpeg', 2000), (1027, 'Tシャツ', 'Tシャツ', '白', 'Pume', 'PumeのTシャツ (白)', '綿、ポリエステル', 'L', '1019.jpeg', 2000), (1028, 'Tシャツ', 'Tシャツ', '白', 'Pume', 'PumeのTシャツ (白)', '綿、ポリエステル', 'M', '1019.jpeg', 2000), (1029, 'Tシャツ', 'Tシャツ', 'グレー', 'Pume', 'PumeのTシャツ (グレー)', '綿、ポリエステル', 'L', '1020.jpeg', 2000), (1030, 'Tシャツ', 'Tシャツ', 'グレー', 'Pume', 'PumeのTシャツ (グレー)', '綿、ポリエステル', 'M', '1020.jpeg', 2000), (1031, 'Tシャツ', 'Tシャツ', '白', 'Cerina', 'CerinaのTシャツ (白)', '綿、ポリエステル', 'M', '1021.jpeg', 2000), (1032, 'Tシャツ', 'Tシャツ', '白', 'Cerina', 'CerinaのTシャツ (白)', '綿、ポリエステル', 'L', '1022.jpeg', 2000), (1033, 'Tシャツ', 'Tシャツ', '白', 'Cerina', 'CerinaのTシャツ (白)', '綿、ポリエステル', 'L', '1023.jpeg', 2000), (1034, 'シャツ', 'シャツ', '赤', 'Adidos', 'Adidosのシャツ (赤)', '綿・ポリエステル', 'L', '1024.jpeg', 2500), (1035, 'シャツ', 'シャツ', '赤', 'Adidos', 'Adidosのシャツ (赤)', '綿・ポリエステル', 'M', '1024.jpeg', 2500), (1036, 'シャツ', 'シャツ', '青', 'Adidos', 'Adidosのシャツ (青)', '綿・ポリエステル', 'L', '1025.jpeg', 2500), (1037, 'シャツ', 'シャツ', '青', 'Adidos', 'Adidosのシャツ (青)', '綿・ポリエステル', 'M', '1025.jpeg', 2500), (1038, 'シャツ', 'シャツ', '白', 'Adidos', 'Adidosのシャツ (白)', '綿・ポリエステル', 'L', '1026.jpeg', 2500), (1039, 'シャツ', 'シャツ', '白', 'Adidos', 'Adidosのシャツ (白)', '綿・ポリエステル', 'M', '1026.jpeg', 2500), (1040, 'シャツ', 'シャツ', '白', 'Beamer', 'Beamerのシャツ (白)', '綿・ポリエステル', 'M', '1027.jpeg', 2500), (1041, 'シャツ', 'シャツ', '青', 'Beamer', 'Beamerのシャツ (青)', '綿・ポリエステル', 'M', '1028.jpeg', 2500), (1042, 'シャツ', 'シャツ', '青', 'Beamer', 'Beamerのシャツ (青)', '綿・ポリエステル', 'L', '1029.jpeg', 2500), (1043, 'シャツ', 'シャツ', '黒', 'Beamer', 'Beamerのシャツ (黒)', '綿・ポリエステル', 'L', '1030.jpeg', 2500), (1044, 'シャツ', 'シャツ', '黒', 'melon', 'melonのシャツ (黒)', '綿・ポリエステル', 'M', '1031.jpeg', 2500), (1045, 'シャツ', 'シャツ', '黒', 'melon', 'melonのシャツ (黒)', '綿・ポリエステル', 'L', '1032.jpeg', 2500), (1046, 'シャツ', 'シャツ', '白', 'melon', 'melonのシャツ (白)', '綿・ポリエステル', 'L', '1033.jpeg', 2500), (1047, 'シャツ', 'シャツ', '白', 'Neki', 'Nekiのシャツ (白)', '綿・ポリエステル', 'M', '1034.jpeg', '2500), (1048, 'シャツ[*]', 'シャツ', 'グレー', 'NEKI', 'NEKIのシャツ (グレー)', '綿・ポリエステル', 'M', '1035.JPEG', 2500), (1049, 'タンクトップ', 'タンクトップ', 'グレー', 'GUP', 'GUPのタンクトップ (グレー)', 'コットン', 'L', '1036.JPEG', 1200), (1050, 'タンクトップ', 'タンクトップ', '白', 'GUP', 'GUPのタンクトップ (白)', 'コットン', 'L', '1037.JPEG', 1200), (1051, 'タンクトップ', 'タンクトップ', '黒', 'GUP', 'GUPのタンクトップ (黒)', 'コットン', 'M', '1038.JPEG', 1200), (1052, 'タンクトップ', 'タンクトップ', '白', 'GUP', 'GUPのタンクトップ (白)', 'コットン', 'M', '1039.JPEG', 1200), (1053, 'ベルト', 'ベルト', '黒', 'CERINA', 'CERINAのベルト (黒)', 'レザー', 'FREE', '1040.JPEG', 999), (1054, 'ベルト', 'ベルト', '茶色', 'CERINA', 'CERINAのベルト (茶色)', 'レザー', 'FREE', '1041.JPEG', 999), (1055, 'ベルト', 'ベルト', '茶色', 'CERINA', 'CERINAのベルト (茶色)', 'レザー', 'FREE', '1042.JPEG', 999), (1056, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1043.JPEG', 1290), (1057, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1043.JPEG', 1290), (1058, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1043.JPEG', 1290), (1059, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1044.JPEG', 1290), (1060, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1044.JPEG', 1290), (1061, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1044.JPEG', 1290), (1062, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1045.JPEG', 1290), (1063, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1045.JPEG', 1290), (1064, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1045.JPEG', 1290), (1065, 'スラックス', 'スラックス', '緑', 'NEKI', 'NEKIのスラックス (緑)', '綿、アクリル', 'L', '1046.JPEG', 1600), (1066, 'スラックス', 'スラックス', '緑', 'NEKI', 'NEKIのスラックス (緑)', '綿、アクリル', 'M', '1046.JPEG', 1600), (1067, 'スラックス', 'スラックス', '黄色', 'NEKI', 'NEKIのスラックス (黄色)', '綿、アクリル', 'L', '1047.JPEG', 1600), (1068, 'スラックス', 'スラックス', '緑', 'NEKI', 'NEKIのスラックス (緑)', '綿、アクリル', 'M', '1048.JPEG', 1600), (1069, 'スラックス', 'スラックス', 'ピンク', 'NEKI', 'NEKIのスラックス (ピンク)', '綿、アクリル', 'L', '1049.JPEG', 1600), (1070, 'スラックス', 'スラックス', '黒', 'ADIDOS', 'ADIDOSのスラックス (黒)', '綿、アクリル', 'L', '1050.JPEG', 1600), (1071, 'スラックス', 'スラックス', '白', 'ADIDOS', 'ADIDOSのスラックス (ピンク)', '綿、アクリル', 'M', '1051.JPEG', 1600), (1072, 'スラックス', 'スラックス', '白', 'ADIDOS', 'ADIDOSのスラックス (黒)', '綿、アクリル', 'S', '1051.JPEG', 1600), (1073, 'スラックス', 'スラックス', '黒', 'ADIDOS', 'ADIDOSのスラックス (白)', '綿、アクリル', 'L', '1052.JPEG', 1600), (1074, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'L', '1053.JPEG', 2500), (1075, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1053.JPEG', 2500), (1076, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'L', '1054.JPEG', 2500), (1077, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1054.JPEG', 2500), (1078, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1055.JPEG', 2500), (1079, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'S', '1055.JPEG', 2500), (1080, '短パン', '短パン', '黒', 'NEKI', 'NEKIの短パン (黒)', '綿、ポリエステル', 'FREE', '1056.JPEG', 1000), (1081, '短パン', '短パン', '緑', 'BEAMER', 'BEAMERの短パン (緑)', '綿、ポリエステル', 'FREE', '1057.JPEG', 1000), (1082, '短パン', '短パン', '黒', 'BEAMER', 'BEAMERの短パン (黒)', '綿、ポリエステル', 'FREE', '1058.JPEG', 1000), (1083, '短パン', '短パン', '青', 'CERINA', 'CERINAの短パン (青)', '綿、ポリエステル', 'FREE', '1059.JPEG', 1000), (1084, '短パン', '短パン', 'ピンク', 'CERINA', 'CERINAの短パン (ピンク)', '綿、ポリエステル', 'FREE', '1060.JPEG', 1500), (1085, '帽子', '帽子', '黒', 'SOP', 'SOPの帽子 (黒)', 'ナイロン', 'FREE', '1061.JPEG', 1500), (1086, '帽子', '帽子', '黒', 'SOP', 'SOPの帽子 (黒)', 'コットン', 'FREE', '1062.JPEG', 1500), (1087, '帽子', '帽子', '茶色', 'UNDER', 'UNDERの帽子 (茶色)', 'コットン', 'FREE', '1063.JPEG', 1500), (1088, '帽子', '帽子', '青', 'UNDER', 'UNDERの帽子 (青)', 'ポリエステル', 'FREE', '1064.JPEG', 1500), (1089, '帽子', '帽子', '青', 'LIV', 'LIVの帽子 (青)', 'コットン', 'FREE', '1065.JPEG, 1500)"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1002, 'Tシャツ', 'Tシャツ', '緑', 'Adidos', 'AdidosのTシャツ (緑)', '綿、ポリエステル', 'M', '1002.jpeg', 2000), (1003, 'Tシャツ', 'Tシャツ', '緑', 'Adidos', 'AdidosのTシャツ (緑)', '綿、ポリエステル', 'S', '1002.jpeg', 2000), (1004, 'Tシャツ', 'Tシャツ', '黒', 'Adidos', 'AdidosのTシャツ (黒)', '綿、ポリエステル', 'L', '1003.jpeg', 2000), (1005, 'Tシャツ', 'Tシャツ', '白', 'Adidos', 'AdidosのTシャツ (白)', '綿、ポリエステル', 'M', '1004.jpeg', 2000), (1006, 'Tシャツ', 'Tシャツ', '白', 'Adidos', 'AdidosのTシャツ (白)', '綿、ポリエステル', 'S', '1004.jpeg', 2000), (1007, 'Tシャツ', 'Tシャツ', 'グレー', 'Adidos', 'AdidosのTシャツ (グレー)', '綿、ポリエステル', 'L', '1005.jpeg', 2000), (1008, 'Tシャツ', 'Tシャツ', '黒', 'Adidos', 'AdidosのTシャツ (黒)', '綿、ポリエステル', 'L', '1006.jpeg', 2000), (1009, 'Tシャツ', 'Tシャツ', '黒', 'Adidos', 'AdidosのTシャツ (黒)', '綿、ポリエステル', 'M', '1006.jpeg', 2000), (1010, 'Tシャツ', 'Tシャツ', '黒', 'NOVEMBRE', 'NOVEMBREのTシャツ (黒)', '綿、ポリエステル', 'M', '1007.jpeg', 2000), (1011, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'L', '1008.jpeg', 2000), (1012, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'M', '1008.jpeg', 2000), (1013, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'L', '1009.jpeg', 2000), (1014, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'S', '1009.jpeg', 2000), (1015, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'M', '1010.jpeg', 2000), (1016, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'S', '1010.jpeg', 2000), (1017, 'Tシャツ', 'Tシャツ', '黒', 'NOVEMBRE', 'NOVEMBREのTシャツ (黒)', '綿、ポリエステル', 'L', '1011.jpeg', 2000), (1018, 'Tシャツ', 'Tシャツ', '黒', 'NOVEMBRE', 'NOVEMBREのTシャツ (黒)', '綿、ポリエステル', 'M', '1011.jpeg', 2000), (1019, 'Tシャツ', 'Tシャツ', '青', 'NOVEMBRE', 'NOVEMBREのTシャツ (青)', '綿、ポリエステル', 'L', '1012.jpeg', 2000), (1020, 'Tシャツ', 'Tシャツ', '青', 'NOVEMBRE', 'NOVEMBREのTシャツ (青)', '綿、ポリエステル', 'M', '1012.jpeg', 2000), (1021, 'Tシャツ', 'Tシャツ', '白', 'Beamer', 'BeamerのTシャツ (白)', '綿、ポリエステル', 'M', '1013.jpeg', 2000), (1022, 'Tシャツ', 'Tシャツ', '黒', 'Beamer', 'BeamerのTシャツ (黒)', '綿、ポリエステル', 'L', '1014.jpeg', 2000), (1023, 'Tシャツ', 'Tシャツ', '白', 'Beamer', 'BeamerのTシャツ (白)', '綿、ポリエステル', 'L', '1015.jpeg', 2000), (1024, 'Tシャツ', 'Tシャツ', '黒', 'Beamer', 'BeamerのTシャツ (黒)', '綿、ポリエステル', 'L', '1016.jpeg', 2000), (1025, 'Tシャツ', 'Tシャツ', '赤', 'Beamer', 'BeamerのTシャツ (赤)', '綿、ポリエステル', 'M', '1017.jpeg', 2000), (1026, 'Tシャツ', 'Tシャツ', '黒', 'Beamer', 'BeamerのTシャツ (黒)', '綿、ポリエステル', 'L', '1018.jpeg', 2000), (1027, 'Tシャツ', 'Tシャツ', '白', 'Pume', 'PumeのTシャツ (白)', '綿、ポリエステル', 'L', '1019.jpeg', 2000), (1028, 'Tシャツ', 'Tシャツ', '白', 'Pume', 'PumeのTシャツ (白)', '綿、ポリエステル', 'M', '1019.jpeg', 2000), (1029, 'Tシャツ', 'Tシャツ', 'グレー', 'Pume', 'PumeのTシャツ (グレー)', '綿、ポリエステル', 'L', '1020.jpeg', 2000), (1030, 'Tシャツ', 'Tシャツ', 'グレー', 'Pume', 'PumeのTシャツ (グレー)', '綿、ポリエステル', 'M', '1020.jpeg', 2000), (1031, 'Tシャツ', 'Tシャツ', '白', 'Cerina', 'CerinaのTシャツ (白)', '綿、ポリエステル', 'M', '1021.jpeg', 2000), (1032, 'Tシャツ', 'Tシャツ', '白', 'Cerina', 'CerinaのTシャツ (白)', '綿、ポリエステル', 'L', '1022.jpeg', 2000), (1033, 'Tシャツ', 'Tシャツ', '白', 'Cerina', 'CerinaのTシャツ (白)', '綿、ポリエステル', 'L', '1023.jpeg', 2000), (1034, 'シャツ', 'シャツ', '赤', 'Adidos', 'Adidosのシャツ (赤)', '綿・ポリエステル', 'L', '1024.jpeg', 2500), (1035, 'シャツ', 'シャツ', '赤', 'Adidos', 'Adidosのシャツ (赤)', '綿・ポリエステル', 'M', '1024.jpeg', 2500), (1036, 'シャツ', 'シャツ', '青', 'Adidos', 'Adidosのシャツ (青)', '綿・ポリエステル', 'L', '1025.jpeg', 2500), (1037, 'シャツ', 'シャツ', '青', 'Adidos', 'Adidosのシャツ (青)', '綿・ポリエステル', 'M', '1025.jpeg', 2500), (1038, 'シャツ', 'シャツ', '白', 'Adidos', 'Adidosのシャツ (白)', '綿・ポリエステル', 'L', '1026.jpeg', 2500), (1039, 'シャツ', 'シャツ', '白', 'Adidos', 'Adidosのシャツ (白)', '綿・ポリエステル', 'M', '1026.jpeg', 2500), (1040, 'シャツ', 'シャツ', '白', 'Beamer', 'Beamerのシャツ (白)', '綿・ポリエステル', 'M', '1027.jpeg', 2500), (1041, 'シャツ', 'シャツ', '青', 'Beamer', 'Beamerのシャツ (青)', '綿・ポリエステル', 'M', '1028.jpeg', 2500), (1042, 'シャツ', 'シャツ', '青', 'Beamer', 'Beamerのシャツ (青)', '綿・ポリエステル', 'L', '1029.jpeg', 2500), (1043, 'シャツ', 'シャツ', '黒', 'Beamer', 'Beamerのシャツ (黒)', '綿・ポリエステル', 'L', '1030.jpeg', 2500), (1044, 'シャツ', 'シャツ', '黒', 'melon', 'melonのシャツ (黒)', '綿・ポリエステル', 'M', '1031.jpeg', 2500), (1045, 'シャツ', 'シャツ', '黒', 'melon', 'melonのシャツ (黒)', '綿・ポリエステル', 'L', '1032.jpeg', 2500), (1046, 'シャツ', 'シャツ', '白', 'melon', 'melonのシャツ (白)', '綿・ポリエステル', 'L', '1033.jpeg', 2500), (1047, 'シャツ', 'シャツ', '白', 'Neki', 'Nekiのシャツ (白)', '綿・ポリエステル', 'M', '1034.jpeg', '2500), (1048, 'シャツ', 'シャツ', 'グレー', 'Neki', 'Nekiのシャツ (グレー)', '綿・ポリエステル', 'M', '1035.jpeg', 2500), (1049, 'タンクトップ', 'タンクトップ', 'グレー', 'GUP', 'GUPのタンクトップ (グレー)', 'コットン', 'L', '1036.jpeg', 1200), (1050, 'タンクトップ', 'タンクトップ', '白', 'GUP', 'GUPのタンクトップ (白)', 'コットン', 'L', '1037.jpeg', 1200), (1051, 'タンクトップ', 'タンクトップ', '黒', 'GUP', 'GUPのタンクトップ (黒)', 'コットン', 'M', '1038.jpeg', 1200), (1052, 'タンクトップ', 'タンクトップ', '白', 'GUP', 'GUPのタンクトップ (白)', 'コットン', 'M', '1039.jpeg', 1200), (1053, 'ベルト', 'ベルト', '黒', 'Cerina', 'Cerinaのベルト (黒)', 'レザー', 'free', '1040.jpeg', 999), (1054, 'ベルト', 'ベルト', '茶色', 'Cerina', 'Cerinaのベルト (茶色)', 'レザー', 'free', '1041.jpeg', 999), (1055, 'ベルト', 'ベルト', '茶色', 'Cerina', 'Cerinaのベルト (茶色)', 'レザー', 'free', '1042.jpeg', 999), (1056, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1043.jpeg', 1290), (1057, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1043.jpeg', 1290), (1058, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1043.jpeg', 1290), (1059, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1044.jpeg', 1290), (1060, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1044.jpeg', 1290), (1061, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1044.jpeg', 1290), (1062, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1045.jpeg', 1290), (1063, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1045.jpeg', 1290), (1064, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1045.jpeg', 1290), (1065, 'スラックス', 'スラックス', '緑', 'Neki', 'Nekiのスラックス (緑)', '綿、アクリル', 'L', '1046.jpeg', 1600), (1066, 'スラックス', 'スラックス', '緑', 'Neki', 'Nekiのスラックス (緑)', '綿、アクリル', 'M', '1046.jpeg', 1600), (1067, 'スラックス', 'スラックス', '黄色', 'Neki', 'Nekiのスラックス (黄色)', '綿、アクリル', 'L', '1047.jpeg', 1600), (1068, 'スラックス', 'スラックス', '緑', 'Neki', 'Nekiのスラックス (緑)', '綿、アクリル', 'M', '1048.jpeg', 1600), (1069, 'スラックス', 'スラックス', 'ピンク', 'Neki', 'Nekiのスラックス (ピンク)', '綿、アクリル', 'L', '1049.jpeg', 1600), (1070, 'スラックス', 'スラックス', '黒', 'Adidos', 'Adidosのスラックス (黒)', '綿、アクリル', 'L', '1050.jpeg', 1600), (1071, 'スラックス', 'スラックス', '白', 'Adidos', 'Adidosのスラックス (ピンク)', '綿、アクリル', 'M', '1051.jpeg', 1600), (1072, 'スラックス', 'スラックス', '白', 'Adidos', 'Adidosのスラックス (黒)', '綿、アクリル', 'S', '1051.jpeg', 1600), (1073, 'スラックス', 'スラックス', '黒', 'Adidos', 'Adidosのスラックス (白)', '綿、アクリル', 'L', '1052.jpeg', 1600), (1074, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'L', '1053.jpeg', 2500), (1075, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1053.jpeg', 2500), (1076, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'L', '1054.jpeg', 2500), (1077, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1054.jpeg', 2500), (1078, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1055.jpeg', 2500), (1079, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'S', '1055.jpeg', 2500), (1080, '短パン', '短パン', '黒', 'Neki', 'Nekiの短パン (黒)', '綿、ポリエステル', 'free', '1056.jpeg', 1000), (1081, '短パン', '短パン', '緑', 'Beamer', 'Beamerの短パン (緑)', '綿、ポリエステル', 'free', '1057.jpeg', 1000), (1082, '短パン', '短パン', '黒', 'Beamer', 'Beamerの短パン (黒)', '綿、ポリエステル', 'free', '1058.jpeg', 1000), (1083, '短パン', '短パン', '青', 'Cerina', 'Cerinaの短パン (青)', '綿、ポリエステル', 'free', '1059.jpeg', 1000), (1084, '短パン', '短パン', 'ピンク', 'Cerina', 'Cerinaの短パン (ピンク)', '綿、ポリエステル', 'free', '1060.jpeg', 1500), (1085, '帽子', '帽子', '黒', 'SOP', 'SOPの帽子 (黒)', 'ナイロン', 'free', '1061.jpeg', 1500), (1086, '帽子', '帽子', '黒', 'SOP', 'SOPの帽子 (黒)', 'コットン', 'free', '1062.jpeg', 1500), (1087, '帽子', '帽子', '茶色', 'Under', 'Underの帽子 (茶色)', 'コットン', 'free', '1063.jpeg', 1500), (1088, '帽子', '帽子', '青', 'Under', 'Underの帽子 (青)', 'ポリエステル', 'free', '1064.jpeg', 1500), (1089, '帽子', '帽子', '青', 'LIV', 'LIVの帽子 (青)', 'コットン', 'free', '1065.jpeg, 1500) [42001-200]
+2022-07-21 22:45:08 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1002, 'Tシャツ', 'Tシャツ', '緑', 'Adidos', 'AdidosのTシャツ (緑)', '綿、ポリエステル', 'M', '1002.jpeg', 2000),[*]"; 期待されるステートメント "ROW, (, DEFAULT, NOT, EXISTS, INTERSECTS, UNIQUE"
+Syntax error in SQL statement "INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1002, 'Tシャツ', 'Tシャツ', '緑', 'Adidos', 'AdidosのTシャツ (緑)', '綿、ポリエステル', 'M', '1002.jpeg', 2000),[*]"; expected "ROW, (, DEFAULT, NOT, EXISTS, INTERSECTS, UNIQUE"; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1002, 'Tシャツ', 'Tシャツ', '緑', 'Adidos', 'AdidosのTシャツ (緑)', '綿、ポリエステル', 'M', '1002.jpeg', 2000), [42001-200]
+2022-07-21 22:46:22 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1005, 'Tシャツ', 'Tシャツ', '白', 'Adidos', 'AdidosのTシャツ (白)', '綿、ポリエステル', 'M', '1004.jpeg', 2000), 
+(1006, 'T(1010, 'Tシャツ', 'Tシャツ', '黒', 'NOVEMBRE', 'NOVEMBREのTシャツ (黒)', '綿、ポリエステル', 'M', '1007.jpeg', 2000), 
+(1011, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'L', '1008.jpeg', 2000), 
+(1012, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'M', '1008.jpeg', 2000), 
+(1013, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'L', '1009.jpeg', 2000), 
+(1014, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'S', '1009.jpeg', 2000), 
+(1015, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'M', '1010.jpeg', 2000), 
+(1016, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'S', '1010.jpeg', 2000), 
+(1017, 'Tシャツ', 'Tシャツ', '黒', 'NOVEMBRE', 'NOVEMBREのTシャツ (黒)', '綿、ポリエステル', 'L', '1011.jpeg', 2000), 
+(1018, 'Tシャツ', 'Tシャツ', '黒', 'NOVEMBRE', 'NOVEMBREのTシャツ (黒)', '綿、ポリエステル', 'M', '1011.jpeg', 2000), 
+(1019, 'Tシャツ', 'Tシャツ', '青', 'NOVEMBRE', 'NOVEMBREのTシャツ (青)', '綿、ポリエステル', 'L', '1012.jpeg', 2000), 
+(1020, 'Tシャツ', 'Tシャツ', '青', 'NOVEMBRE', 'NOVEMBREのTシャツ (青)', '綿、ポリエステル', 'M', '1012.jpeg', 2000), 
+(1021, 'Tシャツ', 'Tシャツ', '白', 'Beamer', 'BeamerのTシャツ (白)', '綿、ポリエステル', 'M', '1013.jpeg', 2000), 
+(1022, 'Tシャツ', 'Tシャツ', '黒', 'Beamer', 'BeamerのTシャツ (黒)', '綿、ポリエステル', 'L', '1014.jpeg', 2000), 
+(1023, 'Tシャツ', 'Tシャツ', '白', 'Beamer', 'BeamerのTシャツ (白)', '綿、ポリエステル', 'L', '1015.jpeg', 2000), 
+(1024, 'Tシャツ', 'Tシャツ', '黒', 'Beamer', 'BeamerのTシャツ (黒)', '綿、ポリエステル', 'L', '1016.jpeg', 2000), 
+(1025, 'Tシャツ', 'Tシャツ', '赤', 'Beamer', 'BeamerのTシャツ (赤)', '綿、ポリエステル', 'M', '1017.jpeg', 2000), 
+(1026, 'Tシャツ', 'Tシャツ', '黒', 'Beamer', 'BeamerのTシャツ (黒)', '綿、ポリエステル', 'L', '1018.jpeg', 2000), 
+(1027, 'Tシャツ', 'Tシャツ', '白', 'Pume', 'PumeのTシャツ (白)', '綿、ポリエステル', 'L', '1019.jpeg', 2000), 
+(1028, 'Tシャツ', 'Tシャツ', '白', 'Pume', 'PumeのTシャツ (白)', '綿、ポリエステル', 'M', '1019.jpeg', 2000), 
+(1029, 'Tシャツ', 'Tシャツ', 'グレー', 'Pume', 'PumeのTシャツ (グレー)', '綿、ポリエステル', 'L', '1020.jpeg', 2000), 
+(1030, 'Tシャツ', 'Tシャツ', 'グレー', 'Pume', 'PumeのTシャツ (グレー)', '綿、ポリエステル', 'M', '1020.jpeg', 2000), 
+(1031, 'Tシャツ', 'Tシャツ', '白', 'Cerina', 'CerinaのTシャツ (白)', '綿、ポリエステル', 'M', '1021.jpeg', 2000), 
+(1032, 'Tシャツ', 'Tシャツ', '白', 'Cerina', 'CerinaのTシャツ (白)', '綿、ポリエステル', 'L', '1022.jpeg', 2000), 
+(1033, 'Tシャツ', 'Tシャツ', '白', 'Cerina', 'CerinaのTシャツ (白)', '綿、ポリエステル', 'L', '1023.jpeg', 2000), 
+(1034, 'シャツ', 'シャツ', '赤', 'Adidos', 'Adidosのシャツ (赤)', '綿・ポリエステル', 'L', '1024.jpeg', 2500), 
+(1035, 'シャツ', 'シャツ', '赤', 'Adidos', 'Adidosのシャツ (赤)', '綿・ポリエステル', 'M', '1024.jpeg', 2500), 
+(1036, 'シャツ', 'シャツ', '青', 'Adidos', 'Adidosのシャツ (青)', '綿・ポリエステル', 'L', '1025.jpeg', 2500), 
+(1037, 'シャツ', 'シャツ', '青', 'Adidos', 'Adidosのシャツ (青)', '綿・ポリエステル', 'M', '1025.jpeg', 2500), 
+(1038, 'シャツ', 'シャツ', '白', 'Adidos', 'Adidosのシャツ (白)', '綿・ポリエステル', 'L', '1026.jpeg', 2500), 
+(1039, 'シャツ', 'シャツ', '白', 'Adidos', 'Adidosのシャツ (白)', '綿・ポリエステル', 'M', '1026.jpeg', 2500), 
+(1040, 'シャツ', 'シャツ', '白', 'Beamer', 'Beamerのシャツ (白)', '綿・ポリエステル', 'M', '1027.jpeg', 2500), 
+(1041, 'シャツ', 'シャツ', '青', 'Beamer', 'Beamerのシャツ (青)', '綿・ポリエステル', 'M', '1028.jpeg', 2500), 
+(1042, 'シャツ', 'シャツ', '青', 'Beamer', 'Beamerのシャツ (青)', '綿・ポリエステル', 'L', '1029.jpeg', 2500), 
+(1043, 'シャツ', 'シャツ', '黒', 'Beamer', 'Beamerのシャツ (黒)', '綿・ポリエステル', 'L', '1030.jpeg', 2500), 
+(1044, 'シャツ', 'シャツ', '黒', 'melon', 'melonのシャツ (黒)', '綿・ポリエステル', 'M', '1031.jpeg', 2500), 
+(1045, 'シャツ', 'シャツ', '黒', 'melon', 'melonのシャツ (黒)', '綿・ポリエステル', 'L', '1032.jpeg', 2500), 
+(1046, 'シャツ', 'シャツ', '白', 'melon', 'melonのシャツ (白)', '綿・ポリエステル', 'L', '1033.jpeg', 2500), 
+(1047, 'シャツ', 'シャツ', '白', 'Neki', 'Nekiのシャツ (白)', '綿・ポリエステル', 'M', '1034.jpeg', '2500), 
+(1048, 'シャツ', 'シャツ', 'グレー', 'Neki', 'Nekiのシャツ (グレー)', '綿・ポリエステル', 'M', '1035.jpeg', 2500), 
+(1049, 'タンクトップ', 'タンクトップ', 'グレー', 'GUP', 'GUPのタンクトップ (グレー)', 'コットン', 'L', '1036.jpeg', 1200), 
+(1050, 'タンクトップ', 'タンクトップ', '白', 'GUP', 'GUPのタンクトップ (白)', 'コットン', 'L', '1037.jpeg', 1200), 
+(1051, 'タンクトップ', 'タンクトップ', '黒', 'GUP', 'GUPのタンクトップ (黒)', 'コットン', 'M', '1038.jpeg', 1200), 
+(1052, 'タンクトップ', 'タンクトップ', '白', 'GUP', 'GUPのタンクトップ (白)', 'コットン', 'M', '1039.jpeg', 1200), 
+(1053, 'ベルト', 'ベルト', '黒', 'Cerina', 'Cerinaのベルト (黒)', 'レザー', 'free', '1040.jpeg', 999), 
+(1054, 'ベルト', 'ベルト', '茶色', 'Cerina', 'Cerinaのベルト (茶色)', 'レザー', 'free', '1041.jpeg', 999), 
+(1055, 'ベルト', 'ベルト', '茶色', 'Cerina', 'Cerinaのベルト (茶色)', 'レザー', 'free', '1042.jpeg', 999), 
+(1056, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1043.jpeg', 1290), 
+(1057, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1043.jpeg', 1290), 
+(1058, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1043.jpeg', 1290), 
+(1059, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1044.jpeg', 1290), 
+(1060, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1044.jpeg', 1290), 
+(1061, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1044.jpeg', 1290), 
+(1062, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1045.jpeg', 1290), 
+(1063, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1045.jpeg', 1290), 
+(1064, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1045.jpeg', 1290), 
+(1065, 'スラックス', 'スラックス', '緑', 'Neki', 'Nekiのスラックス (緑)', '綿、アクリル', 'L', '1046.jpeg', 1600), 
+(1066, 'スラックス', 'スラックス', '緑', 'Neki', 'Nekiのスラックス (緑)', '綿、アクリル', 'M', '1046.jpeg', 1600), 
+(1067, 'スラックス', 'スラックス', '黄色', 'Neki', 'Nekiのスラックス (黄色)', '綿、アクリル', 'L', '1047.jpeg', 1600), 
+(1068, 'スラックス', 'スラックス', '緑', 'Neki', 'Nekiのスラックス (緑)', '綿、アクリル', 'M', '1048.jpeg', 1600), 
+(1069, 'スラックス', 'スラックス', 'ピンク', 'Neki', 'Nekiのスラックス (ピンク)', '綿、アクリル', 'L', '1049.jpeg', 1600), 
+(1070, 'スラックス', 'スラックス', '黒', 'Adidos', 'Adidosのスラックス (黒)', '綿、アクリル', 'L', '1050.jpeg', 1600), 
+(1071, 'スラックス', 'スラックス', '白', 'Adidos', 'Adidosのスラックス (ピンク)', '綿、アクリル', 'M', '1051.jpeg', 1600), 
+(1072, 'スラックス', 'スラックス', '白', 'Adidos', 'Adidosのスラックス (黒)', '綿、アクリル', 'S', '1051.jpeg', 1600), 
+(1073, 'スラックス', 'スラックス', '黒', 'Adidos', 'Adidosのスラックス (白)', '綿、アクリル', 'L', '1052.jpeg', 1600), 
+(1074, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'L', '1053.jpeg', 2500), 
+(1075, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1053.jpeg', 2500), 
+(1076, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'L', '1054.jpeg', 2500), 
+(1077, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1054.jpeg', 2500), 
+(1078, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1055.jpeg', 2500), 
+(1079, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'S', '1055.jpeg', 2500), 
+(1080, '短パン', '短パン', '黒', 'Neki', 'Nekiの短パン (黒)', '綿、ポリエステル', 'free', '1056.jpeg', 1000), 
+(1081, '短パン', '短パン', '緑', 'Beamer', 'Beamerの短パン (緑)', '綿、ポリエステル', 'free', '1057.jpeg', 1000), 
+(1082, '短パン', '短パン', '黒', 'Beamer', 'Beamerの短パン (黒)', '綿、ポリエステル', 'free', '1058.jpeg', 1000), 
+(1083, '短パン', '短パン', '青', 'Cerina', 'Cerinaの短パン (青)', '綿、ポリエステル', 'free', '1059.jpeg', 1000), 
+(1084, '短パン', '短パン', 'ピンク', 'Cerina', 'Cerinaの短パン (ピンク)', '綿、ポリエステル', 'free', '1060.jpeg', 1500), 
+(1085, '帽子', '帽子', '黒', 'SOP', 'SOPの帽子 (黒)', 'ナイロン', 'free', '1061.jpeg', 1500), 
+(1086, '帽子', '帽子', '黒', 'SOP', 'SOPの帽子 (黒)', 'コットン', 'free', '1062.jpeg', 1500), 
+(1087, '帽子', '帽子', '茶色', 'Under', 'Underの帽子 (茶色)', 'コットン', 'free', '1063.jpeg', 1500), 
+(1088, '帽子', '帽子', '青', 'Under', 'Underの帽子 (青)', 'ポリエステル', 'free', '1064.jpeg', 1500), 
+(1089, '帽子', '帽子', '青', 'LIV', 'LIVの帽子 (青)', 'コットン', 'free', [*]'1065.jpeg, 1500);"
+Syntax error in SQL statement "INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1005, 'Tシャツ', 'Tシャツ', '白', 'Adidos', 'AdidosのTシャツ (白)', '綿、ポリエステル', 'M', '1004.jpeg', 2000), 
+(1006, 'T(1010, 'Tシャツ', 'Tシャツ', '黒', 'NOVEMBRE', 'NOVEMBREのTシャツ (黒)', '綿、ポリエステル', 'M', '1007.jpeg', 2000), 
+(1011, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'L', '1008.jpeg', 2000), 
+(1012, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'M', '1008.jpeg', 2000), 
+(1013, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'L', '1009.jpeg', 2000), 
+(1014, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'S', '1009.jpeg', 2000), 
+(1015, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'M', '1010.jpeg', 2000), 
+(1016, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'S', '1010.jpeg', 2000), 
+(1017, 'Tシャツ', 'Tシャツ', '黒', 'NOVEMBRE', 'NOVEMBREのTシャツ (黒)', '綿、ポリエステル', 'L', '1011.jpeg', 2000), 
+(1018, 'Tシャツ', 'Tシャツ', '黒', 'NOVEMBRE', 'NOVEMBREのTシャツ (黒)', '綿、ポリエステル', 'M', '1011.jpeg', 2000), 
+(1019, 'Tシャツ', 'Tシャツ', '青', 'NOVEMBRE', 'NOVEMBREのTシャツ (青)', '綿、ポリエステル', 'L', '1012.jpeg', 2000), 
+(1020, 'Tシャツ', 'Tシャツ', '青', 'NOVEMBRE', 'NOVEMBREのTシャツ (青)', '綿、ポリエステル', 'M', '1012.jpeg', 2000), 
+(1021, 'Tシャツ', 'Tシャツ', '白', 'Beamer', 'BeamerのTシャツ (白)', '綿、ポリエステル', 'M', '1013.jpeg', 2000), 
+(1022, 'Tシャツ', 'Tシャツ', '黒', 'Beamer', 'BeamerのTシャツ (黒)', '綿、ポリエステル', 'L', '1014.jpeg', 2000), 
+(1023, 'Tシャツ', 'Tシャツ', '白', 'Beamer', 'BeamerのTシャツ (白)', '綿、ポリエステル', 'L', '1015.jpeg', 2000), 
+(1024, 'Tシャツ', 'Tシャツ', '黒', 'Beamer', 'BeamerのTシャツ (黒)', '綿、ポリエステル', 'L', '1016.jpeg', 2000), 
+(1025, 'Tシャツ', 'Tシャツ', '赤', 'Beamer', 'BeamerのTシャツ (赤)', '綿、ポリエステル', 'M', '1017.jpeg', 2000), 
+(1026, 'Tシャツ', 'Tシャツ', '黒', 'Beamer', 'BeamerのTシャツ (黒)', '綿、ポリエステル', 'L', '1018.jpeg', 2000), 
+(1027, 'Tシャツ', 'Tシャツ', '白', 'Pume', 'PumeのTシャツ (白)', '綿、ポリエステル', 'L', '1019.jpeg', 2000), 
+(1028, 'Tシャツ', 'Tシャツ', '白', 'Pume', 'PumeのTシャツ (白)', '綿、ポリエステル', 'M', '1019.jpeg', 2000), 
+(1029, 'Tシャツ', 'Tシャツ', 'グレー', 'Pume', 'PumeのTシャツ (グレー)', '綿、ポリエステル', 'L', '1020.jpeg', 2000), 
+(1030, 'Tシャツ', 'Tシャツ', 'グレー', 'Pume', 'PumeのTシャツ (グレー)', '綿、ポリエステル', 'M', '1020.jpeg', 2000), 
+(1031, 'Tシャツ', 'Tシャツ', '白', 'Cerina', 'CerinaのTシャツ (白)', '綿、ポリエステル', 'M', '1021.jpeg', 2000), 
+(1032, 'Tシャツ', 'Tシャツ', '白', 'Cerina', 'CerinaのTシャツ (白)', '綿、ポリエステル', 'L', '1022.jpeg', 2000), 
+(1033, 'Tシャツ', 'Tシャツ', '白', 'Cerina', 'CerinaのTシャツ (白)', '綿、ポリエステル', 'L', '1023.jpeg', 2000), 
+(1034, 'シャツ', 'シャツ', '赤', 'Adidos', 'Adidosのシャツ (赤)', '綿・ポリエステル', 'L', '1024.jpeg', 2500), 
+(1035, 'シャツ', 'シャツ', '赤', 'Adidos', 'Adidosのシャツ (赤)', '綿・ポリエステル', 'M', '1024.jpeg', 2500), 
+(1036, 'シャツ', 'シャツ', '青', 'Adidos', 'Adidosのシャツ (青)', '綿・ポリエステル', 'L', '1025.jpeg', 2500), 
+(1037, 'シャツ', 'シャツ', '青', 'Adidos', 'Adidosのシャツ (青)', '綿・ポリエステル', 'M', '1025.jpeg', 2500), 
+(1038, 'シャツ', 'シャツ', '白', 'Adidos', 'Adidosのシャツ (白)', '綿・ポリエステル', 'L', '1026.jpeg', 2500), 
+(1039, 'シャツ', 'シャツ', '白', 'Adidos', 'Adidosのシャツ (白)', '綿・ポリエステル', 'M', '1026.jpeg', 2500), 
+(1040, 'シャツ', 'シャツ', '白', 'Beamer', 'Beamerのシャツ (白)', '綿・ポリエステル', 'M', '1027.jpeg', 2500), 
+(1041, 'シャツ', 'シャツ', '青', 'Beamer', 'Beamerのシャツ (青)', '綿・ポリエステル', 'M', '1028.jpeg', 2500), 
+(1042, 'シャツ', 'シャツ', '青', 'Beamer', 'Beamerのシャツ (青)', '綿・ポリエステル', 'L', '1029.jpeg', 2500), 
+(1043, 'シャツ', 'シャツ', '黒', 'Beamer', 'Beamerのシャツ (黒)', '綿・ポリエステル', 'L', '1030.jpeg', 2500), 
+(1044, 'シャツ', 'シャツ', '黒', 'melon', 'melonのシャツ (黒)', '綿・ポリエステル', 'M', '1031.jpeg', 2500), 
+(1045, 'シャツ', 'シャツ', '黒', 'melon', 'melonのシャツ (黒)', '綿・ポリエステル', 'L', '1032.jpeg', 2500), 
+(1046, 'シャツ', 'シャツ', '白', 'melon', 'melonのシャツ (白)', '綿・ポリエステル', 'L', '1033.jpeg', 2500), 
+(1047, 'シャツ', 'シャツ', '白', 'Neki', 'Nekiのシャツ (白)', '綿・ポリエステル', 'M', '1034.jpeg', '2500), 
+(1048, 'シャツ', 'シャツ', 'グレー', 'Neki', 'Nekiのシャツ (グレー)', '綿・ポリエステル', 'M', '1035.jpeg', 2500), 
+(1049, 'タンクトップ', 'タンクトップ', 'グレー', 'GUP', 'GUPのタンクトップ (グレー)', 'コットン', 'L', '1036.jpeg', 1200), 
+(1050, 'タンクトップ', 'タンクトップ', '白', 'GUP', 'GUPのタンクトップ (白)', 'コットン', 'L', '1037.jpeg', 1200), 
+(1051, 'タンクトップ', 'タンクトップ', '黒', 'GUP', 'GUPのタンクトップ (黒)', 'コットン', 'M', '1038.jpeg', 1200), 
+(1052, 'タンクトップ', 'タンクトップ', '白', 'GUP', 'GUPのタンクトップ (白)', 'コットン', 'M', '1039.jpeg', 1200), 
+(1053, 'ベルト', 'ベルト', '黒', 'Cerina', 'Cerinaのベルト (黒)', 'レザー', 'free', '1040.jpeg', 999), 
+(1054, 'ベルト', 'ベルト', '茶色', 'Cerina', 'Cerinaのベルト (茶色)', 'レザー', 'free', '1041.jpeg', 999), 
+(1055, 'ベルト', 'ベルト', '茶色', 'Cerina', 'Cerinaのベルト (茶色)', 'レザー', 'free', '1042.jpeg', 999), 
+(1056, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1043.jpeg', 1290), 
+(1057, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1043.jpeg', 1290), 
+(1058, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1043.jpeg', 1290), 
+(1059, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1044.jpeg', 1290), 
+(1060, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1044.jpeg', 1290), 
+(1061, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1044.jpeg', 1290), 
+(1062, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1045.jpeg', 1290), 
+(1063, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1045.jpeg', 1290), 
+(1064, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1045.jpeg', 1290), 
+(1065, 'スラックス', 'スラックス', '緑', 'Neki', 'Nekiのスラックス (緑)', '綿、アクリル', 'L', '1046.jpeg', 1600), 
+(1066, 'スラックス', 'スラックス', '緑', 'Neki', 'Nekiのスラックス (緑)', '綿、アクリル', 'M', '1046.jpeg', 1600), 
+(1067, 'スラックス', 'スラックス', '黄色', 'Neki', 'Nekiのスラックス (黄色)', '綿、アクリル', 'L', '1047.jpeg', 1600), 
+(1068, 'スラックス', 'スラックス', '緑', 'Neki', 'Nekiのスラックス (緑)', '綿、アクリル', 'M', '1048.jpeg', 1600), 
+(1069, 'スラックス', 'スラックス', 'ピンク', 'Neki', 'Nekiのスラックス (ピンク)', '綿、アクリル', 'L', '1049.jpeg', 1600), 
+(1070, 'スラックス', 'スラックス', '黒', 'Adidos', 'Adidosのスラックス (黒)', '綿、アクリル', 'L', '1050.jpeg', 1600), 
+(1071, 'スラックス', 'スラックス', '白', 'Adidos', 'Adidosのスラックス (ピンク)', '綿、アクリル', 'M', '1051.jpeg', 1600), 
+(1072, 'スラックス', 'スラックス', '白', 'Adidos', 'Adidosのスラックス (黒)', '綿、アクリル', 'S', '1051.jpeg', 1600), 
+(1073, 'スラックス', 'スラックス', '黒', 'Adidos', 'Adidosのスラックス (白)', '綿、アクリル', 'L', '1052.jpeg', 1600), 
+(1074, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'L', '1053.jpeg', 2500), 
+(1075, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1053.jpeg', 2500), 
+(1076, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'L', '1054.jpeg', 2500), 
+(1077, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1054.jpeg', 2500), 
+(1078, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1055.jpeg', 2500), 
+(1079, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'S', '1055.jpeg', 2500), 
+(1080, '短パン', '短パン', '黒', 'Neki', 'Nekiの短パン (黒)', '綿、ポリエステル', 'free', '1056.jpeg', 1000), 
+(1081, '短パン', '短パン', '緑', 'Beamer', 'Beamerの短パン (緑)', '綿、ポリエステル', 'free', '1057.jpeg', 1000), 
+(1082, '短パン', '短パン', '黒', 'Beamer', 'Beamerの短パン (黒)', '綿、ポリエステル', 'free', '1058.jpeg', 1000), 
+(1083, '短パン', '短パン', '青', 'Cerina', 'Cerinaの短パン (青)', '綿、ポリエステル', 'free', '1059.jpeg', 1000), 
+(1084, '短パン', '短パン', 'ピンク', 'Cerina', 'Cerinaの短パン (ピンク)', '綿、ポリエステル', 'free', '1060.jpeg', 1500), 
+(1085, '帽子', '帽子', '黒', 'SOP', 'SOPの帽子 (黒)', 'ナイロン', 'free', '1061.jpeg', 1500), 
+(1086, '帽子', '帽子', '黒', 'SOP', 'SOPの帽子 (黒)', 'コットン', 'free', '1062.jpeg', 1500), 
+(1087, '帽子', '帽子', '茶色', 'Under', 'Underの帽子 (茶色)', 'コットン', 'free', '1063.jpeg', 1500), 
+(1088, '帽子', '帽子', '青', 'Under', 'Underの帽子 (青)', 'ポリエステル', 'free', '1064.jpeg', 1500), 
+(1089, '帽子', '帽子', '青', 'LIV', 'LIVの帽子 (青)', 'コットン', 'free', [*]'1065.jpeg, 1500);"; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1005, 'Tシャツ', 'Tシャツ', '白', 'Adidos', 'AdidosのTシャツ (白)', '綿、ポリエステル', 'M', '1004.jpeg', 2000), 
+(1006, 'T(1010, 'Tシャツ', 'Tシャツ', '黒', 'NOVEMBRE', 'NOVEMBREのTシャツ (黒)', '綿、ポリエステル', 'M', '1007.jpeg', 2000), 
+(1011, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'L', '1008.jpeg', 2000), 
+(1012, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'M', '1008.jpeg', 2000), 
+(1013, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'L', '1009.jpeg', 2000), 
+(1014, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'S', '1009.jpeg', 2000), 
+(1015, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'M', '1010.jpeg', 2000), 
+(1016, 'Tシャツ', 'Tシャツ', '白', 'NOVEMBRE', 'NOVEMBREのTシャツ (白)', '綿、ポリエステル', 'S', '1010.jpeg', 2000), 
+(1017, 'Tシャツ', 'Tシャツ', '黒', 'NOVEMBRE', 'NOVEMBREのTシャツ (黒)', '綿、ポリエステル', 'L', '1011.jpeg', 2000), 
+(1018, 'Tシャツ', 'Tシャツ', '黒', 'NOVEMBRE', 'NOVEMBREのTシャツ (黒)', '綿、ポリエステル', 'M', '1011.jpeg', 2000), 
+(1019, 'Tシャツ', 'Tシャツ', '青', 'NOVEMBRE', 'NOVEMBREのTシャツ (青)', '綿、ポリエステル', 'L', '1012.jpeg', 2000), 
+(1020, 'Tシャツ', 'Tシャツ', '青', 'NOVEMBRE', 'NOVEMBREのTシャツ (青)', '綿、ポリエステル', 'M', '1012.jpeg', 2000), 
+(1021, 'Tシャツ', 'Tシャツ', '白', 'Beamer', 'BeamerのTシャツ (白)', '綿、ポリエステル', 'M', '1013.jpeg', 2000), 
+(1022, 'Tシャツ', 'Tシャツ', '黒', 'Beamer', 'BeamerのTシャツ (黒)', '綿、ポリエステル', 'L', '1014.jpeg', 2000), 
+(1023, 'Tシャツ', 'Tシャツ', '白', 'Beamer', 'BeamerのTシャツ (白)', '綿、ポリエステル', 'L', '1015.jpeg', 2000), 
+(1024, 'Tシャツ', 'Tシャツ', '黒', 'Beamer', 'BeamerのTシャツ (黒)', '綿、ポリエステル', 'L', '1016.jpeg', 2000), 
+(1025, 'Tシャツ', 'Tシャツ', '赤', 'Beamer', 'BeamerのTシャツ (赤)', '綿、ポリエステル', 'M', '1017.jpeg', 2000), 
+(1026, 'Tシャツ', 'Tシャツ', '黒', 'Beamer', 'BeamerのTシャツ (黒)', '綿、ポリエステル', 'L', '1018.jpeg', 2000), 
+(1027, 'Tシャツ', 'Tシャツ', '白', 'Pume', 'PumeのTシャツ (白)', '綿、ポリエステル', 'L', '1019.jpeg', 2000), 
+(1028, 'Tシャツ', 'Tシャツ', '白', 'Pume', 'PumeのTシャツ (白)', '綿、ポリエステル', 'M', '1019.jpeg', 2000), 
+(1029, 'Tシャツ', 'Tシャツ', 'グレー', 'Pume', 'PumeのTシャツ (グレー)', '綿、ポリエステル', 'L', '1020.jpeg', 2000), 
+(1030, 'Tシャツ', 'Tシャツ', 'グレー', 'Pume', 'PumeのTシャツ (グレー)', '綿、ポリエステル', 'M', '1020.jpeg', 2000), 
+(1031, 'Tシャツ', 'Tシャツ', '白', 'Cerina', 'CerinaのTシャツ (白)', '綿、ポリエステル', 'M', '1021.jpeg', 2000), 
+(1032, 'Tシャツ', 'Tシャツ', '白', 'Cerina', 'CerinaのTシャツ (白)', '綿、ポリエステル', 'L', '1022.jpeg', 2000), 
+(1033, 'Tシャツ', 'Tシャツ', '白', 'Cerina', 'CerinaのTシャツ (白)', '綿、ポリエステル', 'L', '1023.jpeg', 2000), 
+(1034, 'シャツ', 'シャツ', '赤', 'Adidos', 'Adidosのシャツ (赤)', '綿・ポリエステル', 'L', '1024.jpeg', 2500), 
+(1035, 'シャツ', 'シャツ', '赤', 'Adidos', 'Adidosのシャツ (赤)', '綿・ポリエステル', 'M', '1024.jpeg', 2500), 
+(1036, 'シャツ', 'シャツ', '青', 'Adidos', 'Adidosのシャツ (青)', '綿・ポリエステル', 'L', '1025.jpeg', 2500), 
+(1037, 'シャツ', 'シャツ', '青', 'Adidos', 'Adidosのシャツ (青)', '綿・ポリエステル', 'M', '1025.jpeg', 2500), 
+(1038, 'シャツ', 'シャツ', '白', 'Adidos', 'Adidosのシャツ (白)', '綿・ポリエステル', 'L', '1026.jpeg', 2500), 
+(1039, 'シャツ', 'シャツ', '白', 'Adidos', 'Adidosのシャツ (白)', '綿・ポリエステル', 'M', '1026.jpeg', 2500), 
+(1040, 'シャツ', 'シャツ', '白', 'Beamer', 'Beamerのシャツ (白)', '綿・ポリエステル', 'M', '1027.jpeg', 2500), 
+(1041, 'シャツ', 'シャツ', '青', 'Beamer', 'Beamerのシャツ (青)', '綿・ポリエステル', 'M', '1028.jpeg', 2500), 
+(1042, 'シャツ', 'シャツ', '青', 'Beamer', 'Beamerのシャツ (青)', '綿・ポリエステル', 'L', '1029.jpeg', 2500), 
+(1043, 'シャツ', 'シャツ', '黒', 'Beamer', 'Beamerのシャツ (黒)', '綿・ポリエステル', 'L', '1030.jpeg', 2500), 
+(1044, 'シャツ', 'シャツ', '黒', 'melon', 'melonのシャツ (黒)', '綿・ポリエステル', 'M', '1031.jpeg', 2500), 
+(1045, 'シャツ', 'シャツ', '黒', 'melon', 'melonのシャツ (黒)', '綿・ポリエステル', 'L', '1032.jpeg', 2500), 
+(1046, 'シャツ', 'シャツ', '白', 'melon', 'melonのシャツ (白)', '綿・ポリエステル', 'L', '1033.jpeg', 2500), 
+(1047, 'シャツ', 'シャツ', '白', 'Neki', 'Nekiのシャツ (白)', '綿・ポリエステル', 'M', '1034.jpeg', '2500), 
+(1048, 'シャツ', 'シャツ', 'グレー', 'Neki', 'Nekiのシャツ (グレー)', '綿・ポリエステル', 'M', '1035.jpeg', 2500), 
+(1049, 'タンクトップ', 'タンクトップ', 'グレー', 'GUP', 'GUPのタンクトップ (グレー)', 'コットン', 'L', '1036.jpeg', 1200), 
+(1050, 'タンクトップ', 'タンクトップ', '白', 'GUP', 'GUPのタンクトップ (白)', 'コットン', 'L', '1037.jpeg', 1200), 
+(1051, 'タンクトップ', 'タンクトップ', '黒', 'GUP', 'GUPのタンクトップ (黒)', 'コットン', 'M', '1038.jpeg', 1200), 
+(1052, 'タンクトップ', 'タンクトップ', '白', 'GUP', 'GUPのタンクトップ (白)', 'コットン', 'M', '1039.jpeg', 1200), 
+(1053, 'ベルト', 'ベルト', '黒', 'Cerina', 'Cerinaのベルト (黒)', 'レザー', 'free', '1040.jpeg', 999), 
+(1054, 'ベルト', 'ベルト', '茶色', 'Cerina', 'Cerinaのベルト (茶色)', 'レザー', 'free', '1041.jpeg', 999), 
+(1055, 'ベルト', 'ベルト', '茶色', 'Cerina', 'Cerinaのベルト (茶色)', 'レザー', 'free', '1042.jpeg', 999), 
+(1056, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1043.jpeg', 1290), 
+(1057, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1043.jpeg', 1290), 
+(1058, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1043.jpeg', 1290), 
+(1059, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1044.jpeg', 1290), 
+(1060, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1044.jpeg', 1290), 
+(1061, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1044.jpeg', 1290), 
+(1062, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1045.jpeg', 1290), 
+(1063, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1045.jpeg', 1290), 
+(1064, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1045.jpeg', 1290), 
+(1065, 'スラックス', 'スラックス', '緑', 'Neki', 'Nekiのスラックス (緑)', '綿、アクリル', 'L', '1046.jpeg', 1600), 
+(1066, 'スラックス', 'スラックス', '緑', 'Neki', 'Nekiのスラックス (緑)', '綿、アクリル', 'M', '1046.jpeg', 1600), 
+(1067, 'スラックス', 'スラックス', '黄色', 'Neki', 'Nekiのスラックス (黄色)', '綿、アクリル', 'L', '1047.jpeg', 1600), 
+(1068, 'スラックス', 'スラックス', '緑', 'Neki', 'Nekiのスラックス (緑)', '綿、アクリル', 'M', '1048.jpeg', 1600), 
+(1069, 'スラックス', 'スラックス', 'ピンク', 'Neki', 'Nekiのスラックス (ピンク)', '綿、アクリル', 'L', '1049.jpeg', 1600), 
+(1070, 'スラックス', 'スラックス', '黒', 'Adidos', 'Adidosのスラックス (黒)', '綿、アクリル', 'L', '1050.jpeg', 1600), 
+(1071, 'スラックス', 'スラックス', '白', 'Adidos', 'Adidosのスラックス (ピンク)', '綿、アクリル', 'M', '1051.jpeg', 1600), 
+(1072, 'スラックス', 'スラックス', '白', 'Adidos', 'Adidosのスラックス (黒)', '綿、アクリル', 'S', '1051.jpeg', 1600), 
+(1073, 'スラックス', 'スラックス', '黒', 'Adidos', 'Adidosのスラックス (白)', '綿、アクリル', 'L', '1052.jpeg', 1600), 
+(1074, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'L', '1053.jpeg', 2500), 
+(1075, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1053.jpeg', 2500), 
+(1076, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'L', '1054.jpeg', 2500), 
+(1077, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1054.jpeg', 2500), 
+(1078, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1055.jpeg', 2500), 
+(1079, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'S', '1055.jpeg', 2500), 
+(1080, '短パン', '短パン', '黒', 'Neki', 'Nekiの短パン (黒)', '綿、ポリエステル', 'free', '1056.jpeg', 1000), 
+(1081, '短パン', '短パン', '緑', 'Beamer', 'Beamerの短パン (緑)', '綿、ポリエステル', 'free', '1057.jpeg', 1000), 
+(1082, '短パン', '短パン', '黒', 'Beamer', 'Beamerの短パン (黒)', '綿、ポリエステル', 'free', '1058.jpeg', 1000), 
+(1083, '短パン', '短パン', '青', 'Cerina', 'Cerinaの短パン (青)', '綿、ポリエステル', 'free', '1059.jpeg', 1000), 
+(1084, '短パン', '短パン', 'ピンク', 'Cerina', 'Cerinaの短パン (ピンク)', '綿、ポリエステル', 'free', '1060.jpeg', 1500), 
+(1085, '帽子', '帽子', '黒', 'SOP', 'SOPの帽子 (黒)', 'ナイロン', 'free', '1061.jpeg', 1500), 
+(1086, '帽子', '帽子', '黒', 'SOP', 'SOPの帽子 (黒)', 'コットン', 'free', '1062.jpeg', 1500), 
+(1087, '帽子', '帽子', '茶色', 'Under', 'Underの帽子 (茶色)', 'コットン', 'free', '1063.jpeg', 1500), 
+(1088, '帽子', '帽子', '青', 'Under', 'Underの帽子 (青)', 'ポリエステル', 'free', '1064.jpeg', 1500), 
+(1089, '帽子', '帽子', '青', 'LIV', 'LIVの帽子 (青)', 'コットン', 'free', '1065.jpeg, 1500); [42000-200]
+2022-07-21 22:51:10 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1031, 'Tシャツ', 'Tシャツ', '白', 'Cerina', 'CerinaのTシャツ (白)', '綿、ポリエステル', 'M', '1021.jpeg', 2000), 
+(1032, 'Tシャツ', 'Tシャツ', '白', 'Cerina', 'CerinaのTシャツ (白)', '綿、ポリエステル', 'L', '1022.jpeg', 2000), 
+(1033, 'Tシャツ', 'Tシャツ', '白', 'Cerina', 'CerinaのTシャツ (白)', '綿、ポリエステル', 'L', '1023.jpeg', 2000), 
+(1034, 'シャツ', 'シャツ', '赤', 'Adidos', 'Adidosのシャツ (赤)', '綿・ポリエステル', 'L', '1024.jpeg', 2500), 
+(1035, 'シャツ', 'シャツ', '赤', 'Adidos', 'Adidosのシャツ (赤)', '綿・ポリエステル', 'M', '1024.jpeg', 2500), 
+(1036, 'シャツ', 'シャツ', '青', 'Adidos', 'Adidosのシャツ (青)', '綿・ポリエステル', 'L', '1025.jpeg', 2500), 
+(1037, 'シャツ', 'シャツ', '青', 'Adidos', 'Adidosのシャツ (青)', '綿・ポリエステル', 'M', '1025.jpeg', 2500), 
+(1038, 'シャツ', 'シャツ', '白', 'Adidos', 'Adidosのシャツ (白)', '綿・ポリエステル', 'L', '1026.jpeg', 2500), 
+(1039, 'シャツ', 'シャツ', '白', 'Adidos', 'Adidosのシャツ (白)', '綿・ポリエステル', 'M', '1026.jpeg', 2500), 
+(1040, 'シャツ', 'シャツ', '白', 'Beamer', 'Beamerのシャツ (白)', '綿・ポリエステル', 'M', '1027.jpeg', 2500), 
+(1041, 'シャツ', 'シャツ', '青', 'Beamer', 'Beamerのシャツ (青)', '綿・ポリエステル', 'M', '1028.jpeg', 2500), 
+(1042, 'シャツ', 'シャツ', '青', 'Beamer', 'Beamerのシャツ (青)', '綿・ポリエステル', 'L', '1029.jpeg', 2500), 
+(1043, 'シャツ', 'シャツ', '黒', 'Beamer', 'Beamerのシャツ (黒)', '綿・ポリエステル', 'L', '1030.jpeg', 2500), 
+(1044, 'シャツ', 'シャツ', '黒', 'melon', 'melonのシャツ (黒)', '綿・ポリエステル', 'M', '1031.jpeg', 2500), 
+(1045, 'シャツ', 'シャツ', '黒', 'melon', 'melonのシャツ (黒)', '綿・ポリエステル', 'L', '1032.jpeg', 2500), 
+(1046, 'シャツ', 'シャツ', '白', 'melon', 'melonのシャツ (白)', '綿・ポリエステル', 'L', '1033.jpeg', 2500), 
+(1047, 'シャツ', 'シャツ', '白', 'Neki', 'Nekiのシャツ (白)', '綿・ポリエステル', 'M', '1034.jpeg', '2500), 
+(1048, 'シャツ', 'シャツ', 'グレー', 'Neki', 'Nekiのシャツ (グレー)', '綿・ポリエステル', 'M', '1035.jpeg', 2500), 
+(1049, 'タンクトップ', 'タンクトップ', 'グレー', 'GUP', 'GUPのタンクトップ (グレー)', 'コットン', 'L', '1036.jpeg', 1200), 
+(1050, 'タンクトップ', 'タンクトップ', '白', 'GUP', 'GUPのタンクトップ (白)', 'コットン', 'L', '1037.jpeg', 1200), 
+(1051, 'タンクトップ', 'タンクトップ', '黒', 'GUP', 'GUPのタンクトップ (黒)', 'コットン', 'M', '1038.jpeg', 1200), 
+(1052, 'タンクトップ', 'タンクトップ', '白', 'GUP', 'GUPのタンクトップ (白)', 'コットン', 'M', '1039.jpeg', 1200), 
+(1053, 'ベルト', 'ベルト', '黒', 'Cerina', 'Cerinaのベルト (黒)', 'レザー', 'free', '1040.jpeg', 999), 
+(1054, 'ベルト', 'ベルト', '茶色', 'Cerina', 'Cerinaのベルト (茶色)', 'レザー', 'free', '1041.jpeg', 999), 
+(1055, 'ベルト', 'ベルト', '茶色', 'Cerina', 'Cerinaのベルト (茶色)', 'レザー', 'free', '1042.jpeg', 999), 
+(1056, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1043.jpeg', 1290), 
+(1057, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1043.jpeg', 1290), 
+(1058, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1043.jpeg', 1290), 
+(1059, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1044.jpeg', 1290), 
+(1060, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1044.jpeg[*]', 1290);"
+Syntax error in SQL statement "INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1031, 'Tシャツ', 'Tシャツ', '白', 'Cerina', 'CerinaのTシャツ (白)', '綿、ポリエステル', 'M', '1021.jpeg', 2000), 
+(1032, 'Tシャツ', 'Tシャツ', '白', 'Cerina', 'CerinaのTシャツ (白)', '綿、ポリエステル', 'L', '1022.jpeg', 2000), 
+(1033, 'Tシャツ', 'Tシャツ', '白', 'Cerina', 'CerinaのTシャツ (白)', '綿、ポリエステル', 'L', '1023.jpeg', 2000), 
+(1034, 'シャツ', 'シャツ', '赤', 'Adidos', 'Adidosのシャツ (赤)', '綿・ポリエステル', 'L', '1024.jpeg', 2500), 
+(1035, 'シャツ', 'シャツ', '赤', 'Adidos', 'Adidosのシャツ (赤)', '綿・ポリエステル', 'M', '1024.jpeg', 2500), 
+(1036, 'シャツ', 'シャツ', '青', 'Adidos', 'Adidosのシャツ (青)', '綿・ポリエステル', 'L', '1025.jpeg', 2500), 
+(1037, 'シャツ', 'シャツ', '青', 'Adidos', 'Adidosのシャツ (青)', '綿・ポリエステル', 'M', '1025.jpeg', 2500), 
+(1038, 'シャツ', 'シャツ', '白', 'Adidos', 'Adidosのシャツ (白)', '綿・ポリエステル', 'L', '1026.jpeg', 2500), 
+(1039, 'シャツ', 'シャツ', '白', 'Adidos', 'Adidosのシャツ (白)', '綿・ポリエステル', 'M', '1026.jpeg', 2500), 
+(1040, 'シャツ', 'シャツ', '白', 'Beamer', 'Beamerのシャツ (白)', '綿・ポリエステル', 'M', '1027.jpeg', 2500), 
+(1041, 'シャツ', 'シャツ', '青', 'Beamer', 'Beamerのシャツ (青)', '綿・ポリエステル', 'M', '1028.jpeg', 2500), 
+(1042, 'シャツ', 'シャツ', '青', 'Beamer', 'Beamerのシャツ (青)', '綿・ポリエステル', 'L', '1029.jpeg', 2500), 
+(1043, 'シャツ', 'シャツ', '黒', 'Beamer', 'Beamerのシャツ (黒)', '綿・ポリエステル', 'L', '1030.jpeg', 2500), 
+(1044, 'シャツ', 'シャツ', '黒', 'melon', 'melonのシャツ (黒)', '綿・ポリエステル', 'M', '1031.jpeg', 2500), 
+(1045, 'シャツ', 'シャツ', '黒', 'melon', 'melonのシャツ (黒)', '綿・ポリエステル', 'L', '1032.jpeg', 2500), 
+(1046, 'シャツ', 'シャツ', '白', 'melon', 'melonのシャツ (白)', '綿・ポリエステル', 'L', '1033.jpeg', 2500), 
+(1047, 'シャツ', 'シャツ', '白', 'Neki', 'Nekiのシャツ (白)', '綿・ポリエステル', 'M', '1034.jpeg', '2500), 
+(1048, 'シャツ', 'シャツ', 'グレー', 'Neki', 'Nekiのシャツ (グレー)', '綿・ポリエステル', 'M', '1035.jpeg', 2500), 
+(1049, 'タンクトップ', 'タンクトップ', 'グレー', 'GUP', 'GUPのタンクトップ (グレー)', 'コットン', 'L', '1036.jpeg', 1200), 
+(1050, 'タンクトップ', 'タンクトップ', '白', 'GUP', 'GUPのタンクトップ (白)', 'コットン', 'L', '1037.jpeg', 1200), 
+(1051, 'タンクトップ', 'タンクトップ', '黒', 'GUP', 'GUPのタンクトップ (黒)', 'コットン', 'M', '1038.jpeg', 1200), 
+(1052, 'タンクトップ', 'タンクトップ', '白', 'GUP', 'GUPのタンクトップ (白)', 'コットン', 'M', '1039.jpeg', 1200), 
+(1053, 'ベルト', 'ベルト', '黒', 'Cerina', 'Cerinaのベルト (黒)', 'レザー', 'free', '1040.jpeg', 999), 
+(1054, 'ベルト', 'ベルト', '茶色', 'Cerina', 'Cerinaのベルト (茶色)', 'レザー', 'free', '1041.jpeg', 999), 
+(1055, 'ベルト', 'ベルト', '茶色', 'Cerina', 'Cerinaのベルト (茶色)', 'レザー', 'free', '1042.jpeg', 999), 
+(1056, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1043.jpeg', 1290), 
+(1057, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1043.jpeg', 1290), 
+(1058, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1043.jpeg', 1290), 
+(1059, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1044.jpeg', 1290), 
+(1060, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1044.jpeg[*]', 1290);"; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1031, 'Tシャツ', 'Tシャツ', '白', 'Cerina', 'CerinaのTシャツ (白)', '綿、ポリエステル', 'M', '1021.jpeg', 2000), 
+(1032, 'Tシャツ', 'Tシャツ', '白', 'Cerina', 'CerinaのTシャツ (白)', '綿、ポリエステル', 'L', '1022.jpeg', 2000), 
+(1033, 'Tシャツ', 'Tシャツ', '白', 'Cerina', 'CerinaのTシャツ (白)', '綿、ポリエステル', 'L', '1023.jpeg', 2000), 
+(1034, 'シャツ', 'シャツ', '赤', 'Adidos', 'Adidosのシャツ (赤)', '綿・ポリエステル', 'L', '1024.jpeg', 2500), 
+(1035, 'シャツ', 'シャツ', '赤', 'Adidos', 'Adidosのシャツ (赤)', '綿・ポリエステル', 'M', '1024.jpeg', 2500), 
+(1036, 'シャツ', 'シャツ', '青', 'Adidos', 'Adidosのシャツ (青)', '綿・ポリエステル', 'L', '1025.jpeg', 2500), 
+(1037, 'シャツ', 'シャツ', '青', 'Adidos', 'Adidosのシャツ (青)', '綿・ポリエステル', 'M', '1025.jpeg', 2500), 
+(1038, 'シャツ', 'シャツ', '白', 'Adidos', 'Adidosのシャツ (白)', '綿・ポリエステル', 'L', '1026.jpeg', 2500), 
+(1039, 'シャツ', 'シャツ', '白', 'Adidos', 'Adidosのシャツ (白)', '綿・ポリエステル', 'M', '1026.jpeg', 2500), 
+(1040, 'シャツ', 'シャツ', '白', 'Beamer', 'Beamerのシャツ (白)', '綿・ポリエステル', 'M', '1027.jpeg', 2500), 
+(1041, 'シャツ', 'シャツ', '青', 'Beamer', 'Beamerのシャツ (青)', '綿・ポリエステル', 'M', '1028.jpeg', 2500), 
+(1042, 'シャツ', 'シャツ', '青', 'Beamer', 'Beamerのシャツ (青)', '綿・ポリエステル', 'L', '1029.jpeg', 2500), 
+(1043, 'シャツ', 'シャツ', '黒', 'Beamer', 'Beamerのシャツ (黒)', '綿・ポリエステル', 'L', '1030.jpeg', 2500), 
+(1044, 'シャツ', 'シャツ', '黒', 'melon', 'melonのシャツ (黒)', '綿・ポリエステル', 'M', '1031.jpeg', 2500), 
+(1045, 'シャツ', 'シャツ', '黒', 'melon', 'melonのシャツ (黒)', '綿・ポリエステル', 'L', '1032.jpeg', 2500), 
+(1046, 'シャツ', 'シャツ', '白', 'melon', 'melonのシャツ (白)', '綿・ポリエステル', 'L', '1033.jpeg', 2500), 
+(1047, 'シャツ', 'シャツ', '白', 'Neki', 'Nekiのシャツ (白)', '綿・ポリエステル', 'M', '1034.jpeg', '2500), 
+(1048, 'シャツ', 'シャツ', 'グレー', 'Neki', 'Nekiのシャツ (グレー)', '綿・ポリエステル', 'M', '1035.jpeg', 2500), 
+(1049, 'タンクトップ', 'タンクトップ', 'グレー', 'GUP', 'GUPのタンクトップ (グレー)', 'コットン', 'L', '1036.jpeg', 1200), 
+(1050, 'タンクトップ', 'タンクトップ', '白', 'GUP', 'GUPのタンクトップ (白)', 'コットン', 'L', '1037.jpeg', 1200), 
+(1051, 'タンクトップ', 'タンクトップ', '黒', 'GUP', 'GUPのタンクトップ (黒)', 'コットン', 'M', '1038.jpeg', 1200), 
+(1052, 'タンクトップ', 'タンクトップ', '白', 'GUP', 'GUPのタンクトップ (白)', 'コットン', 'M', '1039.jpeg', 1200), 
+(1053, 'ベルト', 'ベルト', '黒', 'Cerina', 'Cerinaのベルト (黒)', 'レザー', 'free', '1040.jpeg', 999), 
+(1054, 'ベルト', 'ベルト', '茶色', 'Cerina', 'Cerinaのベルト (茶色)', 'レザー', 'free', '1041.jpeg', 999), 
+(1055, 'ベルト', 'ベルト', '茶色', 'Cerina', 'Cerinaのベルト (茶色)', 'レザー', 'free', '1042.jpeg', 999), 
+(1056, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1043.jpeg', 1290), 
+(1057, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1043.jpeg', 1290), 
+(1058, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1043.jpeg', 1290), 
+(1059, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1044.jpeg', 1290), 
+(1060, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1044.jpeg', 1290); [42000-200]
+2022-07-21 22:51:42 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1040, 'シャツ', 'シャツ', '白', 'Beamer', 'Beamerのシャツ (白)', '綿・ポリエステル', 'M', '1027.jpeg', 2500), 
+(1041, 'シャツ', 'シャツ', '青', 'Beamer', 'Beamerのシャツ (青)', '綿・ポリエステル', 'M', '1028.jpeg', 2500), 
+(1042, 'シャツ', 'シャツ', '青', 'Beamer', 'Beamerのシャツ (青)', '綿・ポリエステル', 'L', '1029.jpeg', 2500), 
+(1043, 'シャツ', 'シャツ', '黒', 'Beamer', 'Beamerのシャツ (黒)', '綿・ポリエステル', 'L', '1030.jpeg', 2500), 
+(1044, 'シャツ', 'シャツ', '黒', 'melon', 'melonのシャツ (黒)', '綿・ポリエステル', 'M', '1031.jpeg', 2500), 
+(1045, 'シャツ', 'シャツ', '黒', 'melon', 'melonのシャツ (黒)', '綿・ポリエステル', 'L', '1032.jpeg', 2500), 
+(1046, 'シャツ', 'シャツ', '白', 'melon', 'melonのシャツ (白)', '綿・ポリエステル', 'L', '1033.jpeg', 2500), 
+(1047, 'シャツ', 'シャツ', '白', 'Neki', 'Nekiのシャツ (白)', '綿・ポリエステル', 'M', '1034.jpeg', '2500), 
+(1048, 'シャツ', 'シャツ', 'グレー', 'Neki', 'Nekiのシャツ (グレー)', '綿・ポリエステル', 'M', '1035.jpeg', 2500), 
+(1049, 'タンクトップ', 'タンクトップ', 'グレー', 'GUP', 'GUPのタンクトップ (グレー)', 'コットン', 'L', '1036.jpeg[*]', 1200);"
+Syntax error in SQL statement "INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1040, 'シャツ', 'シャツ', '白', 'Beamer', 'Beamerのシャツ (白)', '綿・ポリエステル', 'M', '1027.jpeg', 2500), 
+(1041, 'シャツ', 'シャツ', '青', 'Beamer', 'Beamerのシャツ (青)', '綿・ポリエステル', 'M', '1028.jpeg', 2500), 
+(1042, 'シャツ', 'シャツ', '青', 'Beamer', 'Beamerのシャツ (青)', '綿・ポリエステル', 'L', '1029.jpeg', 2500), 
+(1043, 'シャツ', 'シャツ', '黒', 'Beamer', 'Beamerのシャツ (黒)', '綿・ポリエステル', 'L', '1030.jpeg', 2500), 
+(1044, 'シャツ', 'シャツ', '黒', 'melon', 'melonのシャツ (黒)', '綿・ポリエステル', 'M', '1031.jpeg', 2500), 
+(1045, 'シャツ', 'シャツ', '黒', 'melon', 'melonのシャツ (黒)', '綿・ポリエステル', 'L', '1032.jpeg', 2500), 
+(1046, 'シャツ', 'シャツ', '白', 'melon', 'melonのシャツ (白)', '綿・ポリエステル', 'L', '1033.jpeg', 2500), 
+(1047, 'シャツ', 'シャツ', '白', 'Neki', 'Nekiのシャツ (白)', '綿・ポリエステル', 'M', '1034.jpeg', '2500), 
+(1048, 'シャツ', 'シャツ', 'グレー', 'Neki', 'Nekiのシャツ (グレー)', '綿・ポリエステル', 'M', '1035.jpeg', 2500), 
+(1049, 'タンクトップ', 'タンクトップ', 'グレー', 'GUP', 'GUPのタンクトップ (グレー)', 'コットン', 'L', '1036.jpeg[*]', 1200);"; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1040, 'シャツ', 'シャツ', '白', 'Beamer', 'Beamerのシャツ (白)', '綿・ポリエステル', 'M', '1027.jpeg', 2500), 
+(1041, 'シャツ', 'シャツ', '青', 'Beamer', 'Beamerのシャツ (青)', '綿・ポリエステル', 'M', '1028.jpeg', 2500), 
+(1042, 'シャツ', 'シャツ', '青', 'Beamer', 'Beamerのシャツ (青)', '綿・ポリエステル', 'L', '1029.jpeg', 2500), 
+(1043, 'シャツ', 'シャツ', '黒', 'Beamer', 'Beamerのシャツ (黒)', '綿・ポリエステル', 'L', '1030.jpeg', 2500), 
+(1044, 'シャツ', 'シャツ', '黒', 'melon', 'melonのシャツ (黒)', '綿・ポリエステル', 'M', '1031.jpeg', 2500), 
+(1045, 'シャツ', 'シャツ', '黒', 'melon', 'melonのシャツ (黒)', '綿・ポリエステル', 'L', '1032.jpeg', 2500), 
+(1046, 'シャツ', 'シャツ', '白', 'melon', 'melonのシャツ (白)', '綿・ポリエステル', 'L', '1033.jpeg', 2500), 
+(1047, 'シャツ', 'シャツ', '白', 'Neki', 'Nekiのシャツ (白)', '綿・ポリエステル', 'M', '1034.jpeg', '2500), 
+(1048, 'シャツ', 'シャツ', 'グレー', 'Neki', 'Nekiのシャツ (グレー)', '綿・ポリエステル', 'M', '1035.jpeg', 2500), 
+(1049, 'タンクトップ', 'タンクトップ', 'グレー', 'GUP', 'GUPのタンクトップ (グレー)', 'コットン', 'L', '1036.jpeg', 1200); [42000-200]
+2022-07-21 22:52:29 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1047, 'シャツ', 'シャツ', '白', 'Neki', 'Nekiのシャツ (白)', '綿・ポリエステル', 'M', '1034.jpeg', '2500), 
+(1048, 'シャツ', 'シャツ', 'グレー', 'Neki', 'Nekiのシャツ (グレー)', '綿・ポリエステル', 'M', '1035.jpeg[*]', 2500);"
+Syntax error in SQL statement "INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1047, 'シャツ', 'シャツ', '白', 'Neki', 'Nekiのシャツ (白)', '綿・ポリエステル', 'M', '1034.jpeg', '2500), 
+(1048, 'シャツ', 'シャツ', 'グレー', 'Neki', 'Nekiのシャツ (グレー)', '綿・ポリエステル', 'M', '1035.jpeg[*]', 2500);"; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1047, 'シャツ', 'シャツ', '白', 'Neki', 'Nekiのシャツ (白)', '綿・ポリエステル', 'M', '1034.jpeg', '2500), 
+(1048, 'シャツ', 'シャツ', 'グレー', 'Neki', 'Nekiのシャツ (グレー)', '綿・ポリエステル', 'M', '1035.jpeg', 2500); [42000-200]
+2022-07-21 22:52:40 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1047, 'シャツ', 'シャツ', '白', 'Neki', 'Nekiのシャツ (白)', '綿・ポリエステル', 'M', '1034.jpeg', [*]'2500);"
+Syntax error in SQL statement "INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1047, 'シャツ', 'シャツ', '白', 'Neki', 'Nekiのシャツ (白)', '綿・ポリエステル', 'M', '1034.jpeg', [*]'2500);"; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1047, 'シャツ', 'シャツ', '白', 'Neki', 'Nekiのシャツ (白)', '綿・ポリエステル', 'M', '1034.jpeg', '2500); [42000-200]
+2022-07-21 22:53:13 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1048, 'シャツ', 'シャツ', 'グレー', 'Neki', 'Nekiのシャツ (グレー)', '綿・ポリエステル', 'M', '1035.jpeg', 2500), 
+(1049, 'タンクトップ', 'タンクトップ', 'グレー', 'GUP', 'GUPのタンクトップ (グレー)', 'コットン', 'L', '1036.jpeg', 1200), 
+(1050, 'タンクトップ', 'タンクトップ', '白', 'GUP', 'GUPのタンクトップ (白)', 'コットン', 'L', '1037.jpeg', 1200), 
+(1051, 'タンクトップ', 'タンクトップ', '黒', 'GUP', 'GUPのタンクトップ (黒)', 'コットン', 'M', '1038.jpeg', 1200), 
+(1052, 'タンクトップ', 'タンクトップ', '白', 'GUP', 'GUPのタンクトップ (白)', 'コットン', 'M', '1039.jpeg', 1200), 
+(1053, 'ベルト', 'ベルト', '黒', 'Cerina', 'Cerinaのベルト (黒)', 'レザー', 'free', '1040.jpeg', 999), 
+(1054, 'ベルト', 'ベルト', '茶色', 'Cerina', 'Cerinaのベルト (茶色)', 'レザー', 'free', '1041.jpeg', 999), 
+(1055, 'ベルト', 'ベルト', '茶色', 'Cerina', 'Cerinaのベルト (茶色)', 'レザー', 'free', '1042.jpeg', 999), 
+(1056, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1043.jpeg', 1290), 
+(1057, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1043.jpeg', 1290), 
+(1058, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1043.jpeg', 1290), 
+(1059, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1044.jpeg', 1290), 
+(1060, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1044.jpeg', 1290), 
+(1061, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1044.jpeg', 1290), 
+(1062, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1045.jpeg', 1290), 
+(1063, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1045.jpeg', 1290), 
+(1064, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1045.jpeg', 1290), 
+(1065, 'スラックス', 'スラックス', '緑', 'Neki', 'Nekiのスラックス (緑)', '綿、アクリル', 'L', '1046.jpeg', 1600), 
+(1066, 'スラックス', 'スラックス', '緑', 'Neki', 'Nekiのスラックス (緑)', '綿、アクリル', 'M', '1046.jpeg', 1600), 
+(1067, 'スラックス', 'スラックス', '黄色', 'Neki', 'Nekiのスラックス (黄色)', '綿、アクリル', 'L', '1047.jpeg', 1600), 
+(1068, 'スラックス', 'スラックス', '緑', 'Neki', 'Nekiのスラックス (緑)', '綿、アクリル', 'M', '1048.jpeg', 1600), 
+(1069, 'スラックス', 'スラックス', 'ピンク', 'Neki', 'Nekiのスラックス (ピンク)', '綿、アクリル', 'L', '1049.jpeg', 1600), 
+(1070, 'スラックス', 'スラックス', '黒', 'Adidos', 'Adidosのスラックス (黒)', '綿、アクリル', 'L', '1050.jpeg', 1600), 
+(1071, 'スラックス', 'スラックス', '白', 'Adidos', 'Adidosのスラックス (ピンク)', '綿、アクリル', 'M', '1051.jpeg', 1600), 
+(1072, 'スラックス', 'スラックス', '白', 'Adidos', 'Adidosのスラックス (黒)', '綿、アクリル', 'S', '1051.jpeg', 1600), 
+(1073, 'スラックス', 'スラックス', '黒', 'Adidos', 'Adidosのスラックス (白)', '綿、アクリル', 'L', '1052.jpeg', 1600), 
+(1074, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'L', '1053.jpeg', 2500), 
+(1075, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1053.jpeg', 2500), 
+(1076, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'L', '1054.jpeg', 2500), 
+(1077, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1054.jpeg', 2500), 
+(1078, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1055.jpeg', 2500), 
+(1079, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'S', '1055.jpeg', 2500), 
+(1080, '短パン', '短パン', '黒', 'Neki', 'Nekiの短パン (黒)', '綿、ポリエステル', 'free', '1056.jpeg', 1000), 
+(1081, '短パン', '短パン', '緑', 'Beamer', 'Beamerの短パン (緑)', '綿、ポリエステル', 'free', '1057.jpeg', 1000), 
+(1082, '短パン', '短パン', '黒', 'Beamer', 'Beamerの短パン (黒)', '綿、ポリエステル', 'free', '1058.jpeg', 1000), 
+(1083, '短パン', '短パン', '青', 'Cerina', 'Cerinaの短パン (青)', '綿、ポリエステル', 'free', '1059.jpeg', 1000), 
+(1084, '短パン', '短パン', 'ピンク', 'Cerina', 'Cerinaの短パン (ピンク)', '綿、ポリエステル', 'free', '1060.jpeg', 1500), 
+(1085, '帽子', '帽子', '黒', 'SOP', 'SOPの帽子 (黒)', 'ナイロン', 'free', '1061.jpeg', 1500), 
+(1086, '帽子', '帽子', '黒', 'SOP', 'SOPの帽子 (黒)', 'コットン', 'free', '1062.jpeg', 1500), 
+(1087, '帽子', '帽子', '茶色', 'Under', 'Underの帽子 (茶色)', 'コットン', 'free', '1063.jpeg', 1500), 
+(1088, '帽子', '帽子', '青', 'Under', 'Underの帽子 (青)', 'ポリエステル', 'free', '1064.jpeg', 1500), 
+(1089, '帽子', '帽子', '青', 'LIV', 'LIVの帽子 (青)', 'コットン', 'free', [*]'1065.jpeg, 1500);"
+Syntax error in SQL statement "INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1048, 'シャツ', 'シャツ', 'グレー', 'Neki', 'Nekiのシャツ (グレー)', '綿・ポリエステル', 'M', '1035.jpeg', 2500), 
+(1049, 'タンクトップ', 'タンクトップ', 'グレー', 'GUP', 'GUPのタンクトップ (グレー)', 'コットン', 'L', '1036.jpeg', 1200), 
+(1050, 'タンクトップ', 'タンクトップ', '白', 'GUP', 'GUPのタンクトップ (白)', 'コットン', 'L', '1037.jpeg', 1200), 
+(1051, 'タンクトップ', 'タンクトップ', '黒', 'GUP', 'GUPのタンクトップ (黒)', 'コットン', 'M', '1038.jpeg', 1200), 
+(1052, 'タンクトップ', 'タンクトップ', '白', 'GUP', 'GUPのタンクトップ (白)', 'コットン', 'M', '1039.jpeg', 1200), 
+(1053, 'ベルト', 'ベルト', '黒', 'Cerina', 'Cerinaのベルト (黒)', 'レザー', 'free', '1040.jpeg', 999), 
+(1054, 'ベルト', 'ベルト', '茶色', 'Cerina', 'Cerinaのベルト (茶色)', 'レザー', 'free', '1041.jpeg', 999), 
+(1055, 'ベルト', 'ベルト', '茶色', 'Cerina', 'Cerinaのベルト (茶色)', 'レザー', 'free', '1042.jpeg', 999), 
+(1056, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1043.jpeg', 1290), 
+(1057, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1043.jpeg', 1290), 
+(1058, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1043.jpeg', 1290), 
+(1059, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1044.jpeg', 1290), 
+(1060, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1044.jpeg', 1290), 
+(1061, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1044.jpeg', 1290), 
+(1062, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1045.jpeg', 1290), 
+(1063, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1045.jpeg', 1290), 
+(1064, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1045.jpeg', 1290), 
+(1065, 'スラックス', 'スラックス', '緑', 'Neki', 'Nekiのスラックス (緑)', '綿、アクリル', 'L', '1046.jpeg', 1600), 
+(1066, 'スラックス', 'スラックス', '緑', 'Neki', 'Nekiのスラックス (緑)', '綿、アクリル', 'M', '1046.jpeg', 1600), 
+(1067, 'スラックス', 'スラックス', '黄色', 'Neki', 'Nekiのスラックス (黄色)', '綿、アクリル', 'L', '1047.jpeg', 1600), 
+(1068, 'スラックス', 'スラックス', '緑', 'Neki', 'Nekiのスラックス (緑)', '綿、アクリル', 'M', '1048.jpeg', 1600), 
+(1069, 'スラックス', 'スラックス', 'ピンク', 'Neki', 'Nekiのスラックス (ピンク)', '綿、アクリル', 'L', '1049.jpeg', 1600), 
+(1070, 'スラックス', 'スラックス', '黒', 'Adidos', 'Adidosのスラックス (黒)', '綿、アクリル', 'L', '1050.jpeg', 1600), 
+(1071, 'スラックス', 'スラックス', '白', 'Adidos', 'Adidosのスラックス (ピンク)', '綿、アクリル', 'M', '1051.jpeg', 1600), 
+(1072, 'スラックス', 'スラックス', '白', 'Adidos', 'Adidosのスラックス (黒)', '綿、アクリル', 'S', '1051.jpeg', 1600), 
+(1073, 'スラックス', 'スラックス', '黒', 'Adidos', 'Adidosのスラックス (白)', '綿、アクリル', 'L', '1052.jpeg', 1600), 
+(1074, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'L', '1053.jpeg', 2500), 
+(1075, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1053.jpeg', 2500), 
+(1076, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'L', '1054.jpeg', 2500), 
+(1077, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1054.jpeg', 2500), 
+(1078, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1055.jpeg', 2500), 
+(1079, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'S', '1055.jpeg', 2500), 
+(1080, '短パン', '短パン', '黒', 'Neki', 'Nekiの短パン (黒)', '綿、ポリエステル', 'free', '1056.jpeg', 1000), 
+(1081, '短パン', '短パン', '緑', 'Beamer', 'Beamerの短パン (緑)', '綿、ポリエステル', 'free', '1057.jpeg', 1000), 
+(1082, '短パン', '短パン', '黒', 'Beamer', 'Beamerの短パン (黒)', '綿、ポリエステル', 'free', '1058.jpeg', 1000), 
+(1083, '短パン', '短パン', '青', 'Cerina', 'Cerinaの短パン (青)', '綿、ポリエステル', 'free', '1059.jpeg', 1000), 
+(1084, '短パン', '短パン', 'ピンク', 'Cerina', 'Cerinaの短パン (ピンク)', '綿、ポリエステル', 'free', '1060.jpeg', 1500), 
+(1085, '帽子', '帽子', '黒', 'SOP', 'SOPの帽子 (黒)', 'ナイロン', 'free', '1061.jpeg', 1500), 
+(1086, '帽子', '帽子', '黒', 'SOP', 'SOPの帽子 (黒)', 'コットン', 'free', '1062.jpeg', 1500), 
+(1087, '帽子', '帽子', '茶色', 'Under', 'Underの帽子 (茶色)', 'コットン', 'free', '1063.jpeg', 1500), 
+(1088, '帽子', '帽子', '青', 'Under', 'Underの帽子 (青)', 'ポリエステル', 'free', '1064.jpeg', 1500), 
+(1089, '帽子', '帽子', '青', 'LIV', 'LIVの帽子 (青)', 'コットン', 'free', [*]'1065.jpeg, 1500);"; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES (1048, 'シャツ', 'シャツ', 'グレー', 'Neki', 'Nekiのシャツ (グレー)', '綿・ポリエステル', 'M', '1035.jpeg', 2500), 
+(1049, 'タンクトップ', 'タンクトップ', 'グレー', 'GUP', 'GUPのタンクトップ (グレー)', 'コットン', 'L', '1036.jpeg', 1200), 
+(1050, 'タンクトップ', 'タンクトップ', '白', 'GUP', 'GUPのタンクトップ (白)', 'コットン', 'L', '1037.jpeg', 1200), 
+(1051, 'タンクトップ', 'タンクトップ', '黒', 'GUP', 'GUPのタンクトップ (黒)', 'コットン', 'M', '1038.jpeg', 1200), 
+(1052, 'タンクトップ', 'タンクトップ', '白', 'GUP', 'GUPのタンクトップ (白)', 'コットン', 'M', '1039.jpeg', 1200), 
+(1053, 'ベルト', 'ベルト', '黒', 'Cerina', 'Cerinaのベルト (黒)', 'レザー', 'free', '1040.jpeg', 999), 
+(1054, 'ベルト', 'ベルト', '茶色', 'Cerina', 'Cerinaのベルト (茶色)', 'レザー', 'free', '1041.jpeg', 999), 
+(1055, 'ベルト', 'ベルト', '茶色', 'Cerina', 'Cerinaのベルト (茶色)', 'レザー', 'free', '1042.jpeg', 999), 
+(1056, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1043.jpeg', 1290), 
+(1057, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1043.jpeg', 1290), 
+(1058, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1043.jpeg', 1290), 
+(1059, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1044.jpeg', 1290), 
+(1060, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1044.jpeg', 1290), 
+(1061, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1044.jpeg', 1290), 
+(1062, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'L', '1045.jpeg', 1290), 
+(1063, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'M', '1045.jpeg', 1290), 
+(1064, 'サンダル', 'サンダル', '黒', 'GUP', 'GUPのサンダル (黒)', '合成繊維', 'S', '1045.jpeg', 1290), 
+(1065, 'スラックス', 'スラックス', '緑', 'Neki', 'Nekiのスラックス (緑)', '綿、アクリル', 'L', '1046.jpeg', 1600), 
+(1066, 'スラックス', 'スラックス', '緑', 'Neki', 'Nekiのスラックス (緑)', '綿、アクリル', 'M', '1046.jpeg', 1600), 
+(1067, 'スラックス', 'スラックス', '黄色', 'Neki', 'Nekiのスラックス (黄色)', '綿、アクリル', 'L', '1047.jpeg', 1600), 
+(1068, 'スラックス', 'スラックス', '緑', 'Neki', 'Nekiのスラックス (緑)', '綿、アクリル', 'M', '1048.jpeg', 1600), 
+(1069, 'スラックス', 'スラックス', 'ピンク', 'Neki', 'Nekiのスラックス (ピンク)', '綿、アクリル', 'L', '1049.jpeg', 1600), 
+(1070, 'スラックス', 'スラックス', '黒', 'Adidos', 'Adidosのスラックス (黒)', '綿、アクリル', 'L', '1050.jpeg', 1600), 
+(1071, 'スラックス', 'スラックス', '白', 'Adidos', 'Adidosのスラックス (ピンク)', '綿、アクリル', 'M', '1051.jpeg', 1600), 
+(1072, 'スラックス', 'スラックス', '白', 'Adidos', 'Adidosのスラックス (黒)', '綿、アクリル', 'S', '1051.jpeg', 1600), 
+(1073, 'スラックス', 'スラックス', '黒', 'Adidos', 'Adidosのスラックス (白)', '綿、アクリル', 'L', '1052.jpeg', 1600), 
+(1074, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'L', '1053.jpeg', 2500), 
+(1075, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1053.jpeg', 2500), 
+(1076, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'L', '1054.jpeg', 2500), 
+(1077, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1054.jpeg', 2500), 
+(1078, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1055.jpeg', 2500), 
+(1079, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'S', '1055.jpeg', 2500), 
+(1080, '短パン', '短パン', '黒', 'Neki', 'Nekiの短パン (黒)', '綿、ポリエステル', 'free', '1056.jpeg', 1000), 
+(1081, '短パン', '短パン', '緑', 'Beamer', 'Beamerの短パン (緑)', '綿、ポリエステル', 'free', '1057.jpeg', 1000), 
+(1082, '短パン', '短パン', '黒', 'Beamer', 'Beamerの短パン (黒)', '綿、ポリエステル', 'free', '1058.jpeg', 1000), 
+(1083, '短パン', '短パン', '青', 'Cerina', 'Cerinaの短パン (青)', '綿、ポリエステル', 'free', '1059.jpeg', 1000), 
+(1084, '短パン', '短パン', 'ピンク', 'Cerina', 'Cerinaの短パン (ピンク)', '綿、ポリエステル', 'free', '1060.jpeg', 1500), 
+(1085, '帽子', '帽子', '黒', 'SOP', 'SOPの帽子 (黒)', 'ナイロン', 'free', '1061.jpeg', 1500), 
+(1086, '帽子', '帽子', '黒', 'SOP', 'SOPの帽子 (黒)', 'コットン', 'free', '1062.jpeg', 1500), 
+(1087, '帽子', '帽子', '茶色', 'Under', 'Underの帽子 (茶色)', 'コットン', 'free', '1063.jpeg', 1500), 
+(1088, '帽子', '帽子', '青', 'Under', 'Underの帽子 (青)', 'ポリエステル', 'free', '1064.jpeg', 1500), 
+(1089, '帽子', '帽子', '青', 'LIV', 'LIVの帽子 (青)', 'コットン', 'free', '1065.jpeg, 1500); [42000-200]
+2022-07-21 22:54:26 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES(1071, 'スラックス', 'スラックス', '白', 'Adidos', 'Adidosのスラックス (ピンク)', '綿、アクリル', 'M', '1051.jpeg', 1600), 
+(1072, 'スラックス', 'スラックス', '白', 'Adidos', 'Adidosのスラックス (黒)', '綿、アクリル', 'S', '1051.jpeg', 1600), 
+(1073, 'スラックス', 'スラックス', '黒', 'Adidos', 'Adidosのスラックス (白)', '綿、アクリル', 'L', '1052.jpeg', 1600), 
+(1074, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'L', '1053.jpeg', 2500), 
+(1075, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1053.jpeg', 2500), 
+(1076, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'L', '1054.jpeg', 2500), 
+(1077, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1054.jpeg', 2500), 
+(1078, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1055.jpeg', 2500), 
+(1079, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'S', '1055.jpeg', 2500), 
+(1080, '短パン', '短パン', '黒', 'Neki', 'Nekiの短パン (黒)', '綿、ポリエステル', 'free', '1056.jpeg', 1000),[*]"; 期待されるステートメント "ROW, (, DEFAULT, NOT, EXISTS, INTERSECTS, UNIQUE"
+Syntax error in SQL statement "INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES(1071, 'スラックス', 'スラックス', '白', 'Adidos', 'Adidosのスラックス (ピンク)', '綿、アクリル', 'M', '1051.jpeg', 1600), 
+(1072, 'スラックス', 'スラックス', '白', 'Adidos', 'Adidosのスラックス (黒)', '綿、アクリル', 'S', '1051.jpeg', 1600), 
+(1073, 'スラックス', 'スラックス', '黒', 'Adidos', 'Adidosのスラックス (白)', '綿、アクリル', 'L', '1052.jpeg', 1600), 
+(1074, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'L', '1053.jpeg', 2500), 
+(1075, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1053.jpeg', 2500), 
+(1076, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'L', '1054.jpeg', 2500), 
+(1077, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1054.jpeg', 2500), 
+(1078, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1055.jpeg', 2500), 
+(1079, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'S', '1055.jpeg', 2500), 
+(1080, '短パン', '短パン', '黒', 'Neki', 'Nekiの短パン (黒)', '綿、ポリエステル', 'free', '1056.jpeg', 1000),[*]"; expected "ROW, (, DEFAULT, NOT, EXISTS, INTERSECTS, UNIQUE"; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES(1071, 'スラックス', 'スラックス', '白', 'Adidos', 'Adidosのスラックス (ピンク)', '綿、アクリル', 'M', '1051.jpeg', 1600), 
+(1072, 'スラックス', 'スラックス', '白', 'Adidos', 'Adidosのスラックス (黒)', '綿、アクリル', 'S', '1051.jpeg', 1600), 
+(1073, 'スラックス', 'スラックス', '黒', 'Adidos', 'Adidosのスラックス (白)', '綿、アクリル', 'L', '1052.jpeg', 1600), 
+(1074, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'L', '1053.jpeg', 2500), 
+(1075, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1053.jpeg', 2500), 
+(1076, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'L', '1054.jpeg', 2500), 
+(1077, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1054.jpeg', 2500), 
+(1078, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'M', '1055.jpeg', 2500), 
+(1079, 'デニム', 'デニム', '青', 'NOVEMBRE', 'NOVEMBREのデニム (青)', '綿、ポリエステル', 'S', '1055.jpeg', 2500), 
+(1080, '短パン', '短パン', '黒', 'Neki', 'Nekiの短パン (黒)', '綿、ポリエステル', 'free', '1056.jpeg', 1000), [42001-200]
+2022-07-21 22:54:53 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES(1081, '短パン', '短パン', '緑', 'Beamer', 'Beamerの短パン (緑)', '綿、ポリエステル', 'free', '1057.jpeg', 1000), 
+(1082, '短パン', '短パン', '黒', 'Beamer', 'Beamerの短パン (黒)', '綿、ポリエステル', 'free', '1058.jpeg', 1000), 
+(1083, '短パン', '短パン', '青', 'Cerina', 'Cerinaの短パン (青)', '綿、ポリエステル', 'free', '1059.jpeg', 1000), 
+(1084, '短パン', '短パン', 'ピンク', 'Cerina', 'Cerinaの短パン (ピンク)', '綿、ポリエステル', 'free', '1060.jpeg', 1500), 
+(1085, '帽子', '帽子', '黒', 'SOP', 'SOPの帽子 (黒)', 'ナイロン', 'free', '1061.jpeg', 1500), 
+(1086, '帽子', '帽子', '黒', 'SOP', 'SOPの帽子 (黒)', 'コットン', 'free', '1062.jpeg', 1500), 
+(1087, '帽子', '帽子', '茶色', 'Under', 'Underの帽子 (茶色)', 'コットン', 'free', '1063.jpeg', 1500), 
+(1088, '帽子', '帽子', '青', 'Under', 'Underの帽子 (青)', 'ポリエステル', 'free', '1064.jpeg', 1500), 
+(1089, '帽子', '帽子', '青', 'LIV', 'LIVの帽子 (青)', 'コットン', 'free', [*]'1065.jpeg, 1500);"
+Syntax error in SQL statement "INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES(1081, '短パン', '短パン', '緑', 'Beamer', 'Beamerの短パン (緑)', '綿、ポリエステル', 'free', '1057.jpeg', 1000), 
+(1082, '短パン', '短パン', '黒', 'Beamer', 'Beamerの短パン (黒)', '綿、ポリエステル', 'free', '1058.jpeg', 1000), 
+(1083, '短パン', '短パン', '青', 'Cerina', 'Cerinaの短パン (青)', '綿、ポリエステル', 'free', '1059.jpeg', 1000), 
+(1084, '短パン', '短パン', 'ピンク', 'Cerina', 'Cerinaの短パン (ピンク)', '綿、ポリエステル', 'free', '1060.jpeg', 1500), 
+(1085, '帽子', '帽子', '黒', 'SOP', 'SOPの帽子 (黒)', 'ナイロン', 'free', '1061.jpeg', 1500), 
+(1086, '帽子', '帽子', '黒', 'SOP', 'SOPの帽子 (黒)', 'コットン', 'free', '1062.jpeg', 1500), 
+(1087, '帽子', '帽子', '茶色', 'Under', 'Underの帽子 (茶色)', 'コットン', 'free', '1063.jpeg', 1500), 
+(1088, '帽子', '帽子', '青', 'Under', 'Underの帽子 (青)', 'ポリエステル', 'free', '1064.jpeg', 1500), 
+(1089, '帽子', '帽子', '青', 'LIV', 'LIVの帽子 (青)', 'コットン', 'free', [*]'1065.jpeg, 1500);"; SQL statement:
+INSERT INTO PRODUCT (PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, COLOR, MAKER_NAME, DETAIL, MATERIAL, SIZE, IMAGE, PRICE) 
+VALUES(1081, '短パン', '短パン', '緑', 'Beamer', 'Beamerの短パン (緑)', '綿、ポリエステル', 'free', '1057.jpeg', 1000), 
+(1082, '短パン', '短パン', '黒', 'Beamer', 'Beamerの短パン (黒)', '綿、ポリエステル', 'free', '1058.jpeg', 1000), 
+(1083, '短パン', '短パン', '青', 'Cerina', 'Cerinaの短パン (青)', '綿、ポリエステル', 'free', '1059.jpeg', 1000), 
+(1084, '短パン', '短パン', 'ピンク', 'Cerina', 'Cerinaの短パン (ピンク)', '綿、ポリエステル', 'free', '1060.jpeg', 1500), 
+(1085, '帽子', '帽子', '黒', 'SOP', 'SOPの帽子 (黒)', 'ナイロン', 'free', '1061.jpeg', 1500), 
+(1086, '帽子', '帽子', '黒', 'SOP', 'SOPの帽子 (黒)', 'コットン', 'free', '1062.jpeg', 1500), 
+(1087, '帽子', '帽子', '茶色', 'Under', 'Underの帽子 (茶色)', 'コットン', 'free', '1063.jpeg', 1500), 
+(1088, '帽子', '帽子', '青', 'Under', 'Underの帽子 (青)', 'ポリエステル', 'free', '1064.jpeg', 1500), 
+(1089, '帽子', '帽子', '青', 'LIV', 'LIVの帽子 (青)', 'コットン', 'free', '1065.jpeg, 1500); [42000-200]
+2022-07-21 23:01:34 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO PRODUCT_STOCK (STOCK_NUM) VALUE[*](100)"; 期待されるステートメント "DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO PRODUCT_STOCK (STOCK_NUM) VALUE[*](100)"; expected "DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO PRODUCT_STOCK (STOCK_NUM) VALUE(100) [42001-200]
+2022-07-21 23:01:35 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO PRODUCT_STOCK (STOCK_NUM) VALUE[*](100)"; 期待されるステートメント "DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO PRODUCT_STOCK (STOCK_NUM) VALUE[*](100)"; expected "DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO PRODUCT_STOCK (STOCK_NUM) VALUE(100) [42001-200]
+2022-07-21 23:01:53 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO PRODUCT_STOCK (PRODUCT_CODE, STOCK_NUM) VALUE[*](1015, 100)"; 期待されるステートメント "DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO PRODUCT_STOCK (PRODUCT_CODE, STOCK_NUM) VALUE[*](1015, 100)"; expected "DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO PRODUCT_STOCK (PRODUCT_CODE, STOCK_NUM) VALUE(1015, 100) [42001-200]
+2022-07-21 23:01:54 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO PRODUCT_STOCK (PRODUCT_CODE, STOCK_NUM) VALUE[*](1015, 100)"; 期待されるステートメント "DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO PRODUCT_STOCK (PRODUCT_CODE, STOCK_NUM) VALUE[*](1015, 100)"; expected "DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO PRODUCT_STOCK (PRODUCT_CODE, STOCK_NUM) VALUE(1015, 100) [42001-200]
+2022-07-21 23:02:39 jdbc[17]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列番号が一致しません
+Column count does not match; SQL statement:
+INSERT INTO PRODUCT_STOCK (STOCK_NUM) VALUES (100,100) [21002-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.dml.Insert.prepare(Insert.java:319)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-21 23:04:49 jdbc[18]: null
+org.h2.message.DbException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:245)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:186)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.apache.taglibs.standard.tag.common.sql.DataSourceWrapper.getConnection(DataSourceWrapper.java:83)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.getConnection(QueryTagSupport.java:275)
+	at org.apache.taglibs.standard.tag.common.sql.QueryTagSupport.doStartTag(QueryTagSupport.java:160)
+	at org.apache.jsp.list2_jsp._jspx_meth_sql_005fquery_005f0(list2_jsp.java:415)
+	at org.apache.jsp.list2_jsp._jspx_meth_c_005fwhen_005f0(list2_jsp.java:380)
+	at org.apache.jsp.list2_jsp._jspx_meth_c_005fchoose_005f0(list2_jsp.java:338)
+	at org.apache.jsp.list2_jsp._jspService(list2_jsp.java:210)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:777)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:356)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:867)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1716)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 38 more

@@ -38,8 +38,9 @@
 				<TR>
 					<TH>イメージ</TH>
 					<TH>製品名</TH>
+					<TH>色</TH>
 					<TH>販売価格</TH>
-					<TH>口コミ</TH>
+					<TH>ブランド</TH>
 				</TR>
 <%--
 
@@ -52,12 +53,12 @@
 <c:choose>
 	<c:when test="${empty formMakerNames}">
 		<sql:query var="rs">
-		SELECT * FROM PRODUCT_INFO ORDER BY PRODUCT_CODE;
+		SELECT * FROM PRODUCT ORDER BY PRODUCT_CODE;
 		</sql:query>
 	</c:when>
 	<c:otherwise>
 		<sql:query var="rs">
-		SELECT * FROM PRODUCT_INFO
+		SELECT * FROM PRODUCT
 		WHERE MAKER_NAME='${fn:join(formMakerNames, "' OR MAKER_NAME='")}' ORDER BY PRODUCT_CODE;
 		</sql:query>
 	</c:otherwise>
@@ -72,9 +73,11 @@
       <img src="image/${row.IMAGE}" height="60" />
     </TD>
     <%-- 商品名 --%>
-    <TD>${row.PRODUCT_NAME}</TD>
-    <TD>${row.PRICE}円</TD>
-    <TD><a href="review.jsp?productCode=${row.PRODUCT_CODE}">口コミ</a></TD>
+    <TD><center>${row.PRODUCT_NAME}</center></TD>
+    <TD><center>${row.COLOR}</center></TD>
+    <TD><center>${row.PRICE}円</center></TD>
+    <TD><center>${row.MAKER_NAME}</center></TD>
+    <%-- <TD><a href="review.jsp?productCode=${row.PRODUCT_CODE}">口コミ</a></TD> --%>
   </TR>
 
 </c:forEach>
