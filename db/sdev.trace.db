@@ -2503,3 +2503,13 @@ The connection was not closed by the application and is garbage collected [90018
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
 	... 38 more
+2022-07-21 12:39:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: データ変換中にエラーが発生しました 
+Data conversion error converting ; SQL statement:
+
+  UPDATE PRODUCT_STOCK SET STOCK_NUM = STOCK_NUM -1 WHERE PRODUCT_CODE = ?; [22018-200]
+2022-07-21 12:43:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: データ変換中にエラーが発生しました 
+Data conversion error converting ; SQL statement:
+
+  UPDATE PRODUCT_STOCK SET STOCK_NUM = STOCK_NUM -1 WHERE PRODUCT_CODE = ?; [22018-200]

@@ -35,6 +35,7 @@ FROM PRODUCT_REVIEW WHERE PRODUCT_CODE= ? ;
 
 <html>
 <head>
+<link rel="stylesheet" href="template/style.css"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <TITLE>口コミ</TITLE>
 <%--
@@ -50,6 +51,7 @@ td {background-color:#EFEFEF; font-size:normal; color:black;}
 </STYLE>
 </head>
 <BODY bgcolor="#FFFFFF">
+<jsp:include page="template/header.jsp"/>
 	<CENTER>
 		<H2>レビュー一覧</H2>
 
@@ -74,5 +76,6 @@ td {background-color:#EFEFEF; font-size:normal; color:black;}
 		</TABLE>
 
 	</CENTER>
+	<jsp:include page="template/footer.jsp"/>
 </BODY>
 </html>

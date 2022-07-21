@@ -2,11 +2,13 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="template/style.css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>ログイン</title>
     </head>
 
     <body>
+        <jsp:include page="template/header.jsp"/>
         <center>
             <h2>ログイン</h2>
             <p>新規登録がまだの方は<a href="register.html">こちら</a>へ</p>
@@ -21,11 +23,13 @@
             <input type="submit" value="確定" name="submit">
             </form>
         </center>
+        <jsp:include page="template/footer.jsp"/>
         <!-- httpで開いているかチェック -->
         <script>
         if (location.href.match(/^file:/)) {
             alert("Webサーバを起動して、http://localhost:8080 から開いてください");
         }
         </script>
+
     </body>
 </html>

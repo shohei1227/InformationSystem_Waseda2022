@@ -39,6 +39,7 @@ INSERT INTO USER_INFO (ID) VALUES (?);
 
 <html>
 <head>
+<link rel="stylesheet" href="template/style.css"/>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Refresh" content="10;URL=list2.jsp">
   <title>新規登録</title>
@@ -59,5 +60,6 @@ INSERT INTO USER_INFO (ID) VALUES (?);
         <h3> あなたの会員番号(ID)は「 ${UserID} 」です。会員番号はログインに必要となりますので控えておいてください。</h3>
         <p> このページは10秒後に<a href="list2.jsp">一覧ページ</a>に移動します。</p>
     </CENTER>
+    <jsp:include page="template/footer.jsp"/>
 </BODY>
 </HTML>

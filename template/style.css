@@ -12,7 +12,7 @@
 *,*:before,*:after {
     box-sizing: border-box;
 }
-a {
+.site-header__start a {
     text-decoration: none;
     color: #222;
 }
@@ -211,6 +211,5 @@ img {
 }
 footer {
     width: 100%;
-    bottom: 0;
     background-color:#def7ff;
 }

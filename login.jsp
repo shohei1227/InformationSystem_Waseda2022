@@ -13,7 +13,7 @@
         td {background-color:#EFEFEF; font-size:normal; color:black;}
         img {vertical-align: middle;}
     </style>
-
+    <link rel="stylesheet" href="template/style.css"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <TITLE>新規登録</TITLE>
     <%--
@@ -61,5 +61,6 @@
     </c:choose> 
     </c:forEach> 
 	</center>
+    <jsp:include page="template/footer.jsp"/>
 </body>
 </html>

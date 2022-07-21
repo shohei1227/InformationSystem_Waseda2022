@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="template/style.css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>リンク</title>
     </head>
     <body>
+        <jsp:include page="template/header.jsp"/>
         <ul>
             <li><a href="register.html">新規登録</a></li>
             <li><a href="login.html">ログイン</a></li>
-            <li><a href="list.jsp">商品一覧 (list.jsp)</a></li>
-            <li><a href="list2.jsp">商品一覧 Ver.2.0 (list2.jsp)</a></li>
+            <li><a href="list2.jsp">商品一覧 (list2.jsp)</a></li>
         </ul>
+        <jsp:include page="template/footer.jsp"/>
     </body>
 </html>
