@@ -21,7 +21,7 @@
                 <nav class="nav">
                     <button class="nav__toggle" aria-expanded="false" type="button">menu</button>
                     <ul class="nav__wrapper">
-                        <li class="nav__item"><a href="#">Home</a></li>
+                        <li class="nav__item"><a href="/list2.jsp">Home</a></li>
                         <c:if test="${Logined == 'False' || empty Logined}">
                             <li class="nav__item"><a href="/login.html">Login</a></li>
                             <li class="nav__item"><a href="/register.html">Register</a></li>

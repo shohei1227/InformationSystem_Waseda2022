@@ -78,7 +78,7 @@ SELECT PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, MAKER_NAME, DETAIL, MATERIAL, 
   <div class="detail">
       <div class="right">
           <%-- 画像を出力 --%>
-          <img src="image/${row.IMAGE}" />
+          <img src="image/${row.IMAGE}" height='350px' width='350px'/>
       </div>
       <div class="left">
           <%-- メーカーを出力 --%>
