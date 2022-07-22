@@ -33,6 +33,42 @@
 			<jsp:include page="template/sidebar.jsp"/>
 		</div>
 		<div class="main" style="width: 85%">
+		  <div style="background-color:#8fa0f6; height:300px; margin-bottom:15px;">
+		  <h3> <center>おすすめ商品はこちら</center></h3>
+		  <table>
+				<TR>
+					<TH>イメージ</TH>
+					<TH>製品名</TH>
+					<TH>色</TH>
+					<TH>販売価格</TH>
+					<TH>ブランド</TH>
+				</TR>
+				<TR>
+					<TD><img src="image/1024.jpeg" height="60" /></TD>
+					<TD><center>シャツ</center></TD>
+					<TD><center>赤</center></TD>
+					<TD><center>2500円</center></TD>
+					<TD><center>Addios</center></TD>
+				</TR>
+				<TR>
+					<TD><img src="image/1025.jpeg" height="60" /></TD>
+					<TD><center>シャツ</center></TD>
+					<TD><center>青</center></TD>
+					<TD><center>2500円</center></TD>
+					<TD><center>Addios</center></TD>
+				</TR>
+				<TR>
+					<TD><img src="image/1064.jpeg" height="60" /></TD>
+					<TD><center>帽子</center></TD>
+					<TD><center>青</center></TD>
+					<TD><center>1500円</center></TD>
+					<TD><center>Under</center></TD>
+				</TR>
+			</table>
+
+
+		  
+		  </div>
 		<form action="detail.jsp" method="POST">
 			<table>
 				<TR>

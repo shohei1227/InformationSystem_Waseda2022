@@ -68,7 +68,7 @@ SELECT PRODUCT_CODE, PRODUCT_NAME, CATEGORY_NAME, MAKER_NAME, DETAIL, MATERIAL, 
 <BODY>
   <jsp:include page="template/header.jsp"/>
   <%--  <H2>${formProductCode}</H2> --%>
-      <h2>詳細画面</h2>
+      <h2><center>詳細画面</center></h2>
 
   <%--
 
